@@ -786,9 +786,11 @@ public class OvernightShiftMapper
                 })
             });
 
-            if (response.ok) {
-                statusDiv.innerHTML = `<div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #10b981; padding: 10px 14px; border-radius: 8px; font-weight: 600;">
-                    ${currentLang === 'ar' ? '✅ تم إرسال رسالتك بنجاح إلى بريد المهندس عبدالرحمن! سيتم الرد عليك قريباً.' : '✅ Your message was sent successfully to Eng. Abdulrahman! We will respond shortly.'}
+            const data = await response.json();
+
+            if (response.ok || data.success === "true") {
+                statusDiv.innerHTML = `<div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #10b981; padding: 12px 16px; border-radius: 8px; font-weight: 600; line-height: 1.6;">
+                    ${currentLang === 'ar' ? '✅ تم إرسال رسالتك بنجاح! إذا كانت هذه أول رسالة، يرجى فحص صندوق الوارد أو مجلد غير الهام (Spam) في بريدك لتأكيد التفعيل.' : '✅ Your message was sent successfully! If this is the first submission, please check your Inbox or Spam folder to confirm one-time activation.'}
                 </div>`;
                 nameInput.value = '';
                 emailInput.value = '';
@@ -797,11 +799,11 @@ public class OvernightShiftMapper
                 throw new Error('FormSubmit endpoint error');
             }
         } catch (err) {
-            // Automatic Fallback to direct client mailto
-            const mailtoUrl = `mailto:abdulrahmanaldoais@gmail.com?subject=${encodeURIComponent('Portfolio Opportunity: ' + name)}&body=${encodeURIComponent(message + '\n\nSender Email: ' + email + '\nSender Name: ' + name)}`;
-            window.open(mailtoUrl, '_blank');
-            statusDiv.innerHTML = `<div style="background: rgba(59, 130, 246, 0.15); border: 1px solid #3b82f6; color: #60a5fa; padding: 10px 14px; border-radius: 8px; font-weight: 600;">
-                ${currentLang === 'ar' ? '✉️ تم تجهيز الرسالة في تطبيق بريدك الإلكتروني لإرسالها مباشرة.' : '✉️ Email draft opened in your email client for direct delivery.'}
+            // Automatic Fallback to direct client mailto and direct Gmail compose
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=abdulrahmanaldoais@gmail.com&su=${encodeURIComponent('Portfolio Opportunity from ' + name)}&body=${encodeURIComponent(message + '\n\nSender Name: ' + name + '\nSender Email: ' + email)}`;
+            window.open(gmailUrl, '_blank');
+            statusDiv.innerHTML = `<div style="background: rgba(59, 130, 246, 0.15); border: 1px solid #3b82f6; color: #60a5fa; padding: 12px 16px; border-radius: 8px; font-weight: 600;">
+                ${currentLang === 'ar' ? '✉️ تم فتح نافذة Gmail لإرسال الرسالة لبريدك مباشرة دون أي تأخير.' : '✉️ Gmail composer opened to send your message directly.'}
             </div>`;
         } finally {
             btn.disabled = false;

@@ -627,7 +627,13 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/abdulrahmanaldoais@gmail.com" method="POST" onsubmit="handleContactSubmit(event)">
+                    <!-- FormSubmit Hidden Settings -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="رسالة جديدة من زائر لموقعك الشخصي">
+                    <input type="hidden" name="_next" value="https://abdulrahman-aldoais.github.io/Abdulrahman_Aldoais_Portfolio/#contact">
+
                     <div class="form-group">
                         <label data-i18n="form.name">الاسم الكريم</label>
                         <input type="text" id="contactName" name="name" required class="form-control" data-i18n-placeholder="form.namePlaceholder" placeholder="أدخل اسمك هنا...">
@@ -641,10 +647,16 @@
                         <textarea id="contactMessage" name="message" required class="form-control" data-i18n-placeholder="form.msgPlaceholder" placeholder="اكتب رسالتك هنا..."></textarea>
                     </div>
                     <div id="formStatusMsg" style="margin-bottom: 12px; font-size: 0.95rem;"></div>
-                    <button type="submit" class="btn btn-primary" id="submitContactBtn">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        <span data-i18n="form.btnSend">إرسال الرسالة</span>
-                    </button>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button type="submit" class="btn btn-primary" id="submitContactBtn" style="flex: 1; min-width: 160px;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            <span data-i18n="form.btnSend">إرسال الرسالة</span>
+                        </button>
+                        <a id="directGmailBtn" href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulrahmanaldoais@gmail.com" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <span>فتح Gmail مباشرة</span>
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>
