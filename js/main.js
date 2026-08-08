@@ -744,4 +744,68 @@ public class OvernightShiftMapper
 
     // Apply saved language initial setup
     applyTranslations(currentLang);
+
+    // Contact Form Real Email Submission Handler
+    window.handleContactSubmit = async function(event) {
+        if (event) event.preventDefault();
+        const btn = document.getElementById('submitContactBtn');
+        const nameInput = document.getElementById('contactName');
+        const emailInput = document.getElementById('contactEmail');
+        const msgInput = document.getElementById('contactMessage');
+        const statusDiv = document.getElementById('formStatusMsg');
+
+        if (!nameInput || !emailInput || !msgInput) return;
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = msgInput.value.trim();
+
+        if (!name || !email || !message) {
+            statusDiv.innerHTML = `<p style="color: #ef4444; font-weight: 500;">${currentLang === 'ar' ? '⚠️ يرجى ملء جميع الحقول المطلوبة' : '⚠️ Please fill all required fields'}</p>`;
+            return;
+        }
+
+        const originalBtnText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = `<svg class="spinner-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path></svg> <span>${currentLang === 'ar' ? 'جاري الإرسال...' : 'Sending...'}</span>`;
+        statusDiv.innerHTML = '';
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/abdulrahmanaldoais@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message,
+                    _subject: `New Portfolio Message from ${name} (${email})`,
+                    _template: 'table'
+                })
+            });
+
+            if (response.ok) {
+                statusDiv.innerHTML = `<div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #10b981; padding: 10px 14px; border-radius: 8px; font-weight: 600;">
+                    ${currentLang === 'ar' ? '✅ تم إرسال رسالتك بنجاح إلى بريد المهندس عبدالرحمن! سيتم الرد عليك قريباً.' : '✅ Your message was sent successfully to Eng. Abdulrahman! We will respond shortly.'}
+                </div>`;
+                nameInput.value = '';
+                emailInput.value = '';
+                msgInput.value = '';
+            } else {
+                throw new Error('FormSubmit endpoint error');
+            }
+        } catch (err) {
+            // Automatic Fallback to direct client mailto
+            const mailtoUrl = `mailto:abdulrahmanaldoais@gmail.com?subject=${encodeURIComponent('Portfolio Opportunity: ' + name)}&body=${encodeURIComponent(message + '\n\nSender Email: ' + email + '\nSender Name: ' + name)}`;
+            window.open(mailtoUrl, '_blank');
+            statusDiv.innerHTML = `<div style="background: rgba(59, 130, 246, 0.15); border: 1px solid #3b82f6; color: #60a5fa; padding: 10px 14px; border-radius: 8px; font-weight: 600;">
+                ${currentLang === 'ar' ? '✉️ تم تجهيز الرسالة في تطبيق بريدك الإلكتروني لإرسالها مباشرة.' : '✉️ Email draft opened in your email client for direct delivery.'}
+            </div>`;
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalBtnText;
+        }
+    };
 });
