@@ -81,28 +81,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 counterPrefix: "صورة",
                 counterOf: "من",
                 modal1: {
-                    title: "معمارية المنصات المشتركة وتوحيد التوقيع الزمني (SaaS Multi-Tenant & UTC Timezone)",
-                    content: "<p>في المنصات المؤسسية المعقدة، يُعد عزل بيانات العملاء وحل الفارق الزمني من أثر التحديات. تم تصميم هذه المعمارية لمنع تداخل المناطق الزمنية بين خادم الاستضافة والشركات العاملة في مناطق مختلفة.</p><br><h4>الركائز المعمارية الرئيسية:</h4><ul><li><b>UTC Standard:</b> تخزين كافة التواريخ بـ UTC بنمط ISO 8601 متبوع بالحرف 'Z'.</li><li><b>Tenant Timezone Provider:</b> تحويل التوقيع الزمني المحلي للمستأجر قبل مقارنات ورديات الحضور.</li><li><b>EF Core Converters:</b> محولات قيم مخصصة تُبقي التواريخ بنوع DateTimeKind.Utc عند القراءة والكتابة.</li></ul>"
+                    title: "معمارية المنصات المشتركة وتوحيد التوقيع الزمني (SaaS Multi-Tenant & UTC Timezone Architecture)",
+                    content: "<p>في المنصات المؤسسية المشتركة (Multi-Tenant SaaS)، يُعد عزل بيانات العملاء وحل الفارق الزمني بين خادم الاستضافة والشركات العاملة عبر العالم من أعقد التحديات الهندسية. تم تصميم هذه المعمارية لمنع تسرب البيانات وتوحيد معالجة التواريخ تماماً.</p><br><h4>الركائز المعمارية والتحليل البرمجي:</h4><ul><li><b>عزل البيانات المباشر (Tenant Isolation Protocol):</b> تطبيق Tenant ID Middleware متبوعاً بقواعد تصفية تلقائية <code>Global Query Filters</code> في EF Core لضمان فصل بيانات كل شركة على مستوى استعلامات قاعدة البيانات وتجنب تسرب البيانات نهائياً.</li><li><b>معيار UTC الموحد (Decoupled Server Timezone):</b> منع استخدام <code>DateTime.Now</code> تماماً والاعتماد على <code>DateTime.UtcNow</code> بصيغة ISO 8601 'Z' عبر جميع الخدمات، السجلات، والرسائل.</li><li><b>محولات EF Core المتخصصة (ValueConverters):</b> تهيئة محولات قيم تلقائية تثبت <code>DateTimeKind.Utc</code> عند القراءة والكتابة لمنع السيرفر من تحويل التواريخ للتوقيت المحلي.</li><li><b>حساب التوقيت المحلي للمستأجر (Tenant-Local Business Logic):</b> جلب التوقيت الخاص بالشركة <code>tenantProvider.GetTenantTimeZone()</code> وتحويل التواريخ المخزنة بـ UTC إلى التوقيت المحلي فقط أثناء مقارنة الجدول الزمني للورديات وتقارير البصمة اليومية.</li></ul>"
                 },
                 modal2: {
-                    title: "محرك سير العمل والموافقات الديناميكية (Dynamic Enterprise Workflow Engine)",
-                    content: "<p>محرك موافقات مرن يعالج شروط الموافقات المعقدة في الـ Runtime دون الحاجة لتعديل أو كتابة أي كود برمجي ثابت (Zero Hardcoded Flow).</p><br><h4>المميزات التقنية:</h4><ul><li><b>Runtime Rules Processor:</b> تقييم الشروط (القيم المالية، الأيام، المودويل) ديناميكياً.</li><li><b>Task Inbox Lifecycle:</b> إدارة سورة حياة الطلب (موافقة، رفض، طلب بيانات، تفويض، تصعيد).</li><li><b>Realtime WebSockets:</b> إشعارات لحظية للموافقين وشات مباشر داخل كل طلب عبر SignalR.</li></ul>"
+                    title: "محرك سير العمل والموافقات الديناميكية (Dynamic Enterprise Workflow & Approval Engine)",
+                    content: "<p>محرك موافقات مؤسسي مرن ومتقدم تم تصميمه للقضاء تماماً على المسارات المبرمجة ثابتاً (Zero Hardcoded Approval Routes) ومعالجة شروط وقواعد العمل المعقدة في الـ Runtime عبر جميع موديولات المنصة.</p><br><h4>المميزات والتحليل الفني المعمق:</h4><ul><li><b>محرك تقييم القواعد التلقائي (Runtime Rules Processor):</b> تقييم الشروط المتداخلة (المبالغ المالية، المسمى الوظيفي، الإدارة، الموديول، نوع الطلب) ديناميكياً لتحديد مسار التوجيه الدقيق لحظة تقديم الطلب.</li><li><b>صندوق المهمات ودورة الحياة الشاملة (Task Inbox Lifecycle):</b> إدارة كاملة لجميع حالات الطلب (موافقة Approved، رفض Rejected، طلب بيانات إضافية Request Info، سحب الطلب Rescind، وإعادة الإرسال).</li><li><b>إطار التفويض المؤقت (Approval Delegation Framework):</b> إمكانية تفويض صلاحيات الموافقات لموظف آخر خلال فترة زمانية محددة بـ UTC مع تسجيل التاريخ الكامل للعمليات المنجزة بالإنابة.</li><li><b>قاعدة أمان منع الاعتماد الذاتي (Self-Approval Prevention Rule):</b> قاعدة أمان تلقائية تمنع الموظف أو المدير من اعتماد طلباته الشخصية، وتحول الطلب تلقائياً للمستوى الإداري الأعلى.</li><li><b>التصعيد الآلي والتنبيهات اللحظية (SLA Auto-Escalation & SignalR):</b> تصعيد الطلبات المتأخرة للمستوى التالي آلياً عند تجاوز مهلة الاستجابة (SLA Timeout) مع إرسال إشعارات مباشرة وشات تفاعلي عبر SignalR.</li></ul>"
                 },
                 modal3: {
-                    title: "محرك أتمتة الجزاءات ولائحة الانضباط (Hybrid Penalty & Disciplinary Engine)",
-                    content: "<p>أتمتة تطبيق لائحة العقوبات والجزاءات الإدارية والمالية وفق نظام العمل السعودي دون أي تدخل بشري لمنع التحيز الأخطاء الحسابية.</p><br><h4>المميزات التقنية:</h4><ul><li><b>Automated Escalation:</b> التدرج التلقائي للمخالفة بناءً على السجل السلوكي للموظف.</li><li><b>Attendance Linkage:</b> ربط التأخيرات والغياب غير المبرر بإنشاء مخالفات مسودة آلياً.</li><li><b>Appeals Path:</b> مسار اعتراض رسمي يمر بمحرك الموافقات قبل النفاذ المالي.</li></ul>"
+                    title: "محرك أتمتة الجزاءات ولائحة الانضباط (Advanced Hybrid Penalty & Disciplinary Engine)",
+                    content: "<p>أتمتة تطبيق لائحة العقوبات والجزاءات الإدارية والمالية وفق نظام العمل السعودي دون أي تدخل بشري لمنع التحيز الشخصي أو الأخطاء الحسابية.</p><br><h4>المميزات والتحليل الفني المعمق:</h4><ul><li><b>مصفوفة التدرج التلقائي (Disciplinary Matrix Escalation):</b> التدرج الآلي لدرجة العقوبة (إنذار كتابي -> خصم يوم -> خصم يومين -> إيقاف عن العمل) بناءً على سجل تكرار المخالفة لنفس الموظف خلال السنة التعاقدية.</li><li><b>التكامل المباشر مع محرك البصمة (Attendance Linkage):</b> ربط التأخيرات والغياب غير المبرر المحسوبة من محرك الحضور بإنشاء مسودات المخالفات والخصم المالي آلياً.</li><li><b>مسار الاعتراض والتسوية (Appeals & Dispute Resolution):</b> توفير مسار اعتراض رسمي يمر بمحرك الموافقات لتمكين الموظف من تقديم المبررات وإلغاء الخصم قبل اعتماده المالي في مسير الرواتب.</li></ul>"
                 },
                 modal4: {
                     title: "محرك معالجة البصمة والورديات الليلية (Biometrics & Overnight Shift Engine)",
-                    content: "<p>معالجة ملايين حركات أجهزة البصمة وتنقيتها من التكرار مع دعم كامل للورديات الليلية التي تمتد عبر منتصف الليل (Overnight Shifts).</p><br><h4>المميزات التقنية:</h4><ul><li><b>Overnight Mapping:</b> خوارزمية ربط الانصراف المبكر أو المتأخر في اليوم التالي بالوردية الصحيحة.</li><li><b>Log Deduplication:</b> خوارزمية تصفية الحركات المكررة خلال فترة زمنية محددة.</li><li><b>Overtime Calculator:</b> احتساب الساعات الإضافية والتأخيرات وتصدير النتائج لمحرك الرواتب.</li></ul>"
+                    content: "<p>معالجة ملايين حركات أجهزة البصمة وتنقيتها من التكرار مع حل مشكلة الورديات الليلية التي تمتد عبر منتصف الليل (Overnight Shifts Across Midnight).</p><br><h4>المميزات والتحليل الفني المعمق:</h4><ul><li><b>ربط الورديات الليلية (Overnight Shift Mapping Algorithm):</b> خوارزمية ذكية لمعالجة حركات الانصراف في الصباح التالي وتعيينها بدقة للوردية الليلية التي بدأت في اليوم السابق دون تداخل في الأيام الحسابية.</li><li><b>تنقية الحركات المكررة (Biometric Log Deduplication):</b> خوارزمية تصفية الحركات المزدوجة والمكررة الناجمة عن إعادة البصمة خلال فترة زجاجية (Buffer Windows).</li><li><b>محرك حساب الإضافي والتأخيرات (Overtime & Lateness Pipeline):</b> حساب الساعات الإضافية حسب نوع اليوم (يوم عمل عادي / عطلة أسبوعية / عيد) مع احتساب معدلات الضرب والتنسيق المباشر مع الرواتب.</li></ul>"
                 },
                 modal5: {
                     title: "نظام إصدارات العقود ومكافأة نهاية الخدمة (Contract Versioning & EOSB Engine)",
-                    content: "<p>تتبع التاريخ المالي للعقود بشكل غير قابل للتعديل العكسي مع أتمتة حسابات مكافأة نهاية الخدمة والتسويات المالية وفق نظام العمل.</p><br><h4>المميزات التقنية:</h4><ul><li><b>Immutable Versioning:</b> إنشاء إصدار جديد للعقد عند كل تعديل مالي دون حذف النسخ السابقة.</li><li><b>EOSB Settlement Engine:</b> حساب الاستحقاق آلياً حسب سنوات الخدمة وسبب إنهاء العلاقة التعاقدية.</li></ul>"
+                    content: "<p>تتبع التاريخ المالي والتنظيمي للعقود بشكل غير قابل للتعديل العكسي مع أتمتة حسابات مكافأة نهاية الخدمة والتسويات المالية وفق لائحة العمل.</p><br><h4>المميزات والتحليل الفني المعمق:</h4><ul><li><b>إصدارات العقود الثابتة (Immutable Versioning):</b> إنشاء إصدار جديد للعقد عند كل تعديل مالي أو وظيفي وتجميد النسخ السابقة، مما يضمن التوثيق والرجوع التاريخي القانوني عند النزاعات.</li><li><b>محرك مكافأة نهاية الخدمة (EOSB Settlement Engine):</b> حساب الاستحقاق آلياً وفق المادة (84 و 85) من نظام العمل السعودي (نصف شهر عن كل سنة من السنوات الخمس الأولى، وشهر عن كل سنة تالية) مع تطبيق نسب الاستحقاق حسب سبب الانتهاء.</li></ul>"
                 },
                 modal6: {
                     title: "محرك الرواتب والعمليات المالية الجماعية (Financial Payroll & Bulk Processing Architecture)",
-                    content: "<p>محرك المعالجة الجماعية للرواتب، البدلات، والأقساط لآلاف الموظفين في ثوانٍ معدودة مع دعم القفل التاريخي للمسيرات والتصدير البنكي المعتمد.</p><br><h4>المميزات التقنية:</h4><ul><li><b>Bulk Assignment Pipeline:</b> تخصيص البدلات والاستقطاعات لآلاف الموظفين دفعة واحدة.</li><li><b>Automated Deduction Linkage:</b> سحب السلف والمخالفات المعتمدة آلياً وإدراجها بالمسيرة.</li><li><b>Payroll Locking & SIF Export:</b> قفل الحسابات تاريخياً وتصدير ملفات البنوك بنظام SIF.</li></ul>"
+                    content: "<p>محرك المعالجة الجماعية للرواتب، البدلات، والاستقطاعات لآلاف الموظفين في ثوانٍ معدودة مع دعم القفل التاريخي للمسيرات والتصدير البنكي المعتمد.</p><br><h4>المميزات والتحليل الفني المعمق:</h4><ul><li><b>معالجة العمليات الجماعية (Bulk Processing Pipeline):</b> تخصيص وتطبيق البدلات والاستقطاعات على مستوى الآلاف من الموظفين دفعة واحدة بأداء استعلامات محسّن.</li><li><b>السحب الآلي للاستقطاعات (Automated Deduction Linkage):</b> سحب أقساط السلف والجزاءات الإدارية المعتمدة آلياً وتضمينها داخل المسير المالي الشهري.</li><li><b>القفل التاريخي والتصدير البنكي (Payroll Lock & SIF Export):</b> تجميد مسيرات الرواتب المعتمدة تاريخياً لمنع التعديل العكسي وتصدير ملفات حماية الأجور المعتمدة للبنك المركزي والبنوك بصيغة SIF.</li></ul>"
                 }
             },
             arch: { tag: "مخططات الأنظمة المباشرة", title: "استعراض دياجرام المعمارية والتصميم الهيكلي", desc: "اختر النظام من القائمة الجانبية وتصفح الصور والدياجرامات المعمارية الخاصة به بالأزرار التالية", selectModule: "اختر النظام المعماري:", item1: "Workflow Execution Engine", item2: "Payroll & Bulk Pipeline", item3: "Biometrics & Overnight Shift", item4: "SaaS Microservices Core" },
@@ -168,13 +168,13 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             cvModal: {
                 title: "Official Resume — Abdulrahman Ali Aldoais",
-                download: "Download PDF",
-                openNew: "Open in New Tab"
+                download: "Download PDF File",
+                openNew: "Open in New Window"
             },
             codeShowcase: {
-                tag: "CODE QUALITY STANDARDS",
-                title: "Clean Code & Architectural Snippets",
-                desc: "Production-grade C# code patterns and domain algorithms engineered for scalable enterprise systems",
+                tag: "CODE QUALITY & STANDARDS",
+                title: "Clean Code & Architectural Showcase",
+                desc: "Real-world C# architectural code samples designed for enterprise microservices",
                 tab1: "EF Core UTC Converter",
                 tab2: "Workflow Rule Evaluator",
                 tab3: "Overnight Shift Mapper",
@@ -194,17 +194,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 cert4Org: "Data Architecture Standard"
             },
             testimonials: {
-                tag: "LEADERSHIP ENDORSEMENTS",
-                title: "Executive Testimonials & Social Proof",
-                desc: "Endorsements from engineering directors and project leads across deployed platforms",
-                t1Text: "Abdulrahman is an exceptionally skilled engineer in system analysis and architectural design. He spearheaded the workflow and payroll engine automation in FALAK HR with precision and technical mastery.",
-                t1Author: "Software Engineering Leadership",
-                t1Company: "Al-Falak Soft",
-                t2Text: "Abdulrahman possesses outstanding capability in building high-performance microservices with gRPC and EF Core, decoupling server timezones and isolating tenant data to meet Saudi enterprise standards.",
+                tag: "EXECUTIVE TESTIMONIALS",
+                title: "Leadership Recommendations & Endorsements",
+                desc: "Social proof from engineering leads and project directors across platforms I architected",
+                t1Text: "Abdulrahman is an exceptionally skilled engineer in system analysis and complex architecture. He led the workflow engine and payroll automation for FALAK HR with precision.",
+                t1Author: "Engineering Leadership",
+                t1Company: "Al-Falak Soft (KSA / Yemen)",
+                t2Text: "He possesses rare mastery in building high-throughput microservices using gRPC and EF Core, solving timezone drift and guaranteeing tenant data isolation for Saudi clients.",
                 t2Author: "Backend & SaaS Architecture Management",
-                t2Company: "Data Trans (For Obeikan Digital Solutions, KSA)"
+                t2Company: "Data Trans (Contracted for Obeikan Digital Solutions - KSA)"
             },
-            achieve: { tag: "SYSTEMS & ACHIEVEMENTS", title: "Architectural Achievements in FALAK HR", desc: "Core modules and subsystems engineered to solve complex enterprise challenges" },
+            achieve: { tag: "SYSTEMS ARCHITECTURE", title: "FALAK HR Architectural Achievements", desc: "Core microservice modules architected to solve complex enterprise engineering challenges" },
             tabs: { all: "All", saas: "Multi-Tenant & UTC", workflow: "Workflow Engine", payroll: "Payroll & Finance", attendance: "Attendance & Shift" },
             cards: {
                 btnDetails: "Technical Deep Dive & Gallery",
@@ -223,11 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 counterOf: "of",
                 modal1: {
                     title: "Multi-Tenant SaaS & Decoupled Timezone Architecture",
-                    content: "<p>In complex enterprise platforms serving tenants globally, tenant isolation and server timezone drift present major risks. This architecture decouples hosting server clock from tenant local business logic.</p><br><h4>Core Architectural Pillars:</h4><ul><li><b>UTC Standard:</b> All timestamps stored in UTC formatted with ISO 8601 'Z' suffix.</li><li><b>Tenant Timezone Provider:</b> Dynamic tenant local timezone resolution before evaluating shifts or logs.</li><li><b>EF Core Converters:</b> Custom value converters preserving DateTimeKind.Utc on read and write.</li></ul>"
+                    content: "<p>In complex enterprise platforms serving tenants globally, tenant isolation and server timezone drift present major risks. This architecture decouples hosting server clock from tenant local business logic.</p><br><h4>Core Architectural Pillars:</h4><ul><li><b>Tenant Isolation Protocol:</b> Applied Tenant ID Middleware with EF Core <code>Global Query Filters</code> to enforce strict tenant database query isolation.</li><li><b>UTC Standard:</b> All timestamps stored in UTC formatted with ISO 8601 'Z' suffix across all services.</li><li><b>EF Core Converters:</b> Custom value converters preserving DateTimeKind.Utc on read and write.</li><li><b>Tenant-Local Business Logic:</b> Resolves <code>tenantProvider.GetTenantTimeZone()</code> dynamically before evaluating local shifts and attendance logs.</li></ul>"
                 },
                 modal2: {
                     title: "Dynamic Enterprise Workflow & Approval Engine",
-                    content: "<p>A flexible runtime workflow engine eliminating hardcoded approval routes across all enterprise modules (Zero Hardcoded Flows).</p><br><h4>Technical Highlights:</h4><ul><li><b>Runtime Rules Processor:</b> Evaluates complex business conditions (amounts, days, department) at runtime.</li><li><b>Task Inbox Lifecycle:</b> Manages full task lifecycle (Approve, Reject, Request Info, Delegate, Escalate).</li><li><b>Realtime WebSockets:</b> Instant notifications and contextual chat powered by SignalR.</li></ul>"
+                    content: "<p>A flexible runtime workflow engine eliminating hardcoded approval routes across all enterprise modules (Zero Hardcoded Flows).</p><br><h4>Technical Highlights:</h4><ul><li><b>Runtime Rules Processor:</b> Evaluates complex business conditions (amounts, days, department) at runtime to calculate exact approval paths.</li><li><b>Task Inbox Lifecycle:</b> Manages full task lifecycle (Approve, Reject, Request Info, Delegate, Rescind).</li><li><b>Approval Delegation Framework:</b> Enables temporary approval delegation within UTC date windows with full audit logging.</li><li><b>Self-Approval Prevention Rule:</b> Security rule preventing employees/managers from approving their own requests, routing to next management tier.</li><li><b>SLA Auto-Escalation & Realtime SignalR:</b> Escalates overdue pending tasks automatically on SLA timeouts with real-time SignalR notifications and chat.</li></ul>"
                 },
                 modal3: {
                     title: "Advanced Hybrid Penalty & Disciplinary Engine",
