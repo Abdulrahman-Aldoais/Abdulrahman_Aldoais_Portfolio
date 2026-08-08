@@ -721,6 +721,9 @@ textarea.form-control { resize: vertical; min-height: 110px; }
     font-weight: 700;
     padding: 6px 14px;
     border-radius: 20px;
+    border: 1px solid var(--border-glow);
+}
+
 /* Executive Unified Contact Grid */
 .executive-contact-grid {
     display: grid;
