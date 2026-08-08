@@ -1,13 +1,13 @@
 /* 
    Abdulrahman Ali Aldoais - Enterprise Portfolio JavaScript Engine
-   Features: Full i18n Translation Engine (AR/EN), Dynamic JSON Posts & Fields Translation, Bilingual Architecture Viewer, Dark/Light Theme, High-Visibility Gallery Toolbar
+   Features: Full i18n Translation Engine (AR/EN), Dynamic CV Viewer Modal, Dark/Light Theme, High-Visibility Gallery Toolbar
 */
 
 document.addEventListener('DOMContentLoaded', () => {
     // Dictionary Data
     const i18nData = {
         ar: {
-            nav: { about: "نبذة عني", achievements: "الإنجازات التقنية", architecture: "معمارية النظام", skills: "المهارات", experience: "الخبرات", contactBtn: "تواصل معي" },
+            nav: { about: "نبذة عني", achievements: "الإنجازات التقنية", architecture: "معمارية النظام", skills: "المهارات", experience: "الخبرات", contactBtn: "تواصل معي", cvBtn: "السيرة الذاتية" },
             hero: {
                 badge: "Enterprise Backend & SaaS Architect",
                 greeting: "أهلاً بك، أنا",
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 rolePrefix: "متخصص في:",
                 desc: "مهندس أنظمة برمجية متخصص في تحليل ومعمارية وتطوير الأنظمة المؤسسية المعقدة (HRMS, Payroll, Multi-Tenant SaaS, Workflows) باستخدام ASP.NET Core 8 و Microservices مع خبرة في السوق السعودي والخليجي.",
                 btnExplore: "استكشف الإنجازات المعمارية",
+                btnCV: "استعراض السيرة الذاتية (CV)",
                 stat1: "مستخدم في السوق السعودي",
                 stat2: "توافق زمن UTC العالمي",
                 stat3: "مسارات موافقات مبرمجة ثابته",
@@ -22,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge1Title: "Tenant Isolation & UTC",
                 badge2Sub: "Dynamic Workflow",
                 badge2Title: "Runtime Rule Engine"
+            },
+            cvModal: {
+                title: "السيرة الذاتية الرسمية — عبدالرحمن علي الدعيس",
+                download: "تحميل ملف PDF",
+                openNew: "فتح في نافذة مستقلة"
             },
             achieve: { tag: "الإنجازات والأنظمة", title: "سلسلة الإنجازات المعمارية في FALAK HR", desc: "أنظمة وموديولات محورية تم تصميمها وتطويرها لحل أعقد التحديات في المنصات المؤسسية" },
             tabs: { all: "الكل", saas: "Multi-Tenant & UTC", workflow: "Workflow Engine", payroll: "Payroll & Finance", attendance: "Attendance & Shift" },
@@ -107,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footer: "© 2026 جميع الحقوق محفوظة لـ عبدالرحمن علي الدعيس. تم التطوير بمعمارية الأنظمة النظيفة Clean Architecture."
         },
         en: {
-            nav: { about: "About Me", achievements: "Achievements", architecture: "Architecture", skills: "Skills", experience: "Experience", contactBtn: "Contact Me" },
+            nav: { about: "About Me", achievements: "Achievements", architecture: "Architecture", skills: "Skills", experience: "Experience", contactBtn: "Contact Me", cvBtn: "Resume" },
             hero: {
                 badge: "Enterprise Backend & SaaS Architect",
                 greeting: "Hello, I'm",
@@ -115,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 rolePrefix: "Specialized in:",
                 desc: "Enterprise Systems Engineer specializing in architecture, analysis, and backend development for complex platforms (HRMS, Payroll, Multi-Tenant SaaS, Workflows) using ASP.NET Core 8 & Microservices.",
                 btnExplore: "Explore Architecture",
+                btnCV: "View Resume (CV)",
                 stat1: "Active Users in KSA",
                 stat2: "UTC Timezone Compliance",
                 stat3: "Hardcoded Workflow Routes",
@@ -122,6 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 badge1Title: "Tenant Isolation & UTC",
                 badge2Sub: "Dynamic Workflow",
                 badge2Title: "Runtime Rule Engine"
+            },
+            cvModal: {
+                title: "Official Resume — Abdulrahman Ali Aldoais",
+                download: "Download PDF",
+                openNew: "Open in New Tab"
             },
             achieve: { tag: "SYSTEMS & ACHIEVEMENTS", title: "Architectural Achievements in FALAK HR", desc: "Core modules and subsystems engineered to solve complex enterprise challenges" },
             tabs: { all: "All", saas: "Multi-Tenant & UTC", workflow: "Workflow Engine", payroll: "Payroll & Finance", attendance: "Attendance & Shift" },
@@ -325,8 +337,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // 4. Update Close button text
-        const closeBtnEl = document.querySelector('.modal-close-btn');
-        if (closeBtnEl) closeBtnEl.textContent = dict.modals.closeBtn;
+        document.querySelectorAll('.modal-close-btn').forEach(btn => {
+            btn.textContent = dict.modals.closeBtn;
+        });
 
         updateThemeUI(document.documentElement.getAttribute('data-theme'));
         updateArchView();
@@ -449,6 +462,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
 
+    // CV Viewer Modal Engine
+    const cvModalOverlay = document.getElementById('cvModalOverlay');
+
+    window.openCvModal = function() {
+        if (cvModalOverlay) {
+            cvModalOverlay.classList.add('active');
+        }
+    };
+
+    window.closeCvModal = function() {
+        if (cvModalOverlay) {
+            cvModalOverlay.classList.remove('active');
+        }
+    };
+
+    if (cvModalOverlay) {
+        cvModalOverlay.addEventListener('click', (e) => {
+            if (e.target === cvModalOverlay) {
+                closeCvModal();
+            }
+        });
+    }
+
     let currentGallery = [];
     let currentImageIndex = 0;
 
@@ -529,6 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeModal();
+            closeCvModal();
         }
     });
 

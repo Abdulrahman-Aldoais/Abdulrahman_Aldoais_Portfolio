@@ -6,7 +6,7 @@
         "skills": "Skills",
         "experience": "Experience",
         "contactBtn": "Contact Me",
-        "cvBtn": "Resume (CV)"
+        "cvBtn": "Resume"
     },
     "hero": {
         "badge": "Enterprise Backend & SaaS Architect",
@@ -23,6 +23,11 @@
         "badge1Title": "Tenant Isolation & UTC",
         "badge2Sub": "Dynamic Workflow",
         "badge2Title": "Runtime Rule Engine"
+    },
+    "cvModal": {
+        "title": "Official Resume — Abdulrahman Ali Aldoais",
+        "download": "Download PDF",
+        "openNew": "Open in New Tab"
     },
     "achieve": {
         "tag": "SYSTEMS & ACHIEVEMENTS",

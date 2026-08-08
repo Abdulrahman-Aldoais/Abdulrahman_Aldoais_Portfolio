@@ -6,7 +6,7 @@
         "skills": "المهارات",
         "experience": "الخبرات",
         "contactBtn": "تواصل معي",
-        "cvBtn": "السيرة الذاتية (CV)"
+        "cvBtn": "السيرة الذاتية"
     },
     "hero": {
         "badge": "Enterprise Backend & SaaS Architect",
@@ -15,7 +15,7 @@
         "rolePrefix": "متخصص في:",
         "desc": "مهندس أنظمة برمجية متخصص في تحليل ومعمارية وتطوير الأنظمة المؤسسية المعقدة (HRMS, Payroll, Multi-Tenant SaaS, Workflows) باستخدام ASP.NET Core 8 و Microservices مع خبرة في السوق السعودي والخليجي.",
         "btnExplore": "استكشف الإنجازات المعمارية",
-        "btnCV": "تحميل السيرة الذاتية (CV)",
+        "btnCV": "استعراض السيرة الذاتية (CV)",
         "stat1": "مستخدم في السوق السعودي",
         "stat2": "توافق زمن UTC العالمي",
         "stat3": "مسارات موافقات مبرمجة ثابته",
@@ -23,6 +23,11 @@
         "badge1Title": "Tenant Isolation & UTC",
         "badge2Sub": "Dynamic Workflow",
         "badge2Title": "Runtime Rule Engine"
+    },
+    "cvModal": {
+        "title": "السيرة الذاتية الرسمية — عبدالرحمن علي الدعيس",
+        "download": "تحميل ملف PDF",
+        "openNew": "فتح في نافذة مستقلة"
     },
     "achieve": {
         "tag": "الإنجازات والأنظمة",
