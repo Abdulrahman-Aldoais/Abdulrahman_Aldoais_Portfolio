@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulrahman Ali Aldoais | Enterprise Systems Engineer & Architect</title>
+    <meta name="description" content="Personal Portfolio & Architecture Showcase of Abdulrahman Ali Aldoais - Enterprise Systems Engineer, HRMS & Payroll Architect, ASP.NET Core 8 & Microservices Specialist.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
+                <span>Abdulrahman Aldoais</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" class="active" data-i18n="nav.about">نبذة عني</a></li>
+                <li><a href="#achievements" data-i18n="nav.achievements">الإنجازات التقنية</a></li>
+                <li><a href="#architecture" data-i18n="nav.architecture">معمارية النظام</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">المهارات</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">الخبرات</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeToggle" title="Toggle Light/Dark Theme">
+                    <span id="themeIcon">🌙</span>
+                    <span id="themeLabel">ليلي</span>
+                </button>
+                <button class="lang-btn" id="langToggle">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="langText">English</span>
+                </button>
+                <a href="#contact" class="btn btn-primary" data-i18n="nav.contactBtn">تواصل معي</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span data-i18n="hero.badge">Enterprise Backend & SaaS Architect</span>
+                </div>
+                <h1 class="hero-title">
+                    <span data-i18n="hero.greeting">أهلاً بك، أنا</span> <br>
+                    <span class="gradient-text">عبدالرحمن علي الدعيس</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span data-i18n="hero.rolePrefix">متخصص في:</span>
+                    <span class="typing-text" id="typing"></span>
+                </div>
+                <p class="hero-desc" data-i18n="hero.desc">
+                    مهندس أنظمة برمجية متخصص في تحليل ومعمارية وتطوير الأنظمة المؤسسية المعقدة (HRMS, Payroll, Multi-Tenant SaaS, Workflows) باستخدام ASP.NET Core 8 و Microservices مع خبرة في السوق السعودي والخليجي.
+                </p>
+                <div class="hero-actions">
+                    <a href="#achievements" class="btn btn-primary">
+                        <i class="fa-solid fa-microchip"></i>
+                        <span data-i18n="hero.btnExplore">استكشف الإنجازات المعمارية</span>
+                    </a>
+                    <a href="https://linkedin.com/in/abdulrahman-aldoais" target="_blank" class="btn btn-secondary">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p data-i18n="hero.stat1">مستخدم في السوق السعودي</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p data-i18n="hero.stat2">توافق زمن UTC العالمي</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>0%</h3>
+                        <p data-i18n="hero.stat3">مسارات موافقات مبرمجة ثابته</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <img src="assets/images/hero-banner.jpg" alt="Enterprise Microservices Architecture">
+                </div>
+                <div class="floating-badge badge-1">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <div class="badge-info">
+                        <p data-i18n="hero.badge1Sub">Multi-Tenant SaaS</p>
+                        <h4 data-i18n="hero.badge1Title">Tenant Isolation & UTC</h4>
+                    </div>
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <div class="badge-info">
+                        <p data-i18n="hero.badge2Sub">Dynamic Workflow</p>
+                        <h4 data-i18n="hero.badge2Title">Runtime Rule Engine</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="achieve.tag">الإنجازات والأنظمة</span>
+                <h2 class="section-title" data-i18n="achieve.title">سلسلة الإنجازات المعمارية في FALAK HR</h2>
+                <p class="section-desc" data-i18n="achieve.desc">أنظمة وموديولات محورية تم تصميمهما وتطويرها لحل أعقد التحديات في المنصات المؤسسية</p>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all" data-i18n="tab.all">الكل</button>
+                <button class="tab-btn" data-filter="saas" data-i18n="tab.saas">Multi-Tenant & UTC</button>
+                <button class="tab-btn" data-filter="workflow" data-i18n="tab.workflow">Workflow Engine</button>
+                <button class="tab-btn" data-filter="payroll" data-i18n="tab.payroll">Payroll & Finance</button>
+                <button class="tab-btn" data-filter="attendance" data-i18n="tab.attendance">Attendance & Shift</button>
+            </div>
+
+            <div class="achievements-grid">
+                <!-- Card 1 -->
+                <div class="achievement-card" data-category="saas">
+                    <div>
+                        <div class="card-icon-header">
+                            <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+                            <span class="card-number">#01</span>
+                        </div>
+                        <h3 class="card-title">Multi-Tenant SaaS & Decoupled Timezone Architecture</h3>
+                        <p class="card-desc">معمارية متكاملة تضمن الفصل التام لبيانات المستأجرين وحل مشاكل الفارق الزمني العالمي عبر معالجة UTC موحدة وتعيين توقيت المستأجر آلياً.</p>
+                        <div class="card-tags">
+                            <span class="tag">EF Core Converters</span>
+                            <span class="tag">UTC Standard</span>
+                            <span class="tag">Tenant Middleware</span>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="openModal(1)">
+                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="achievement-card" data-category="workflow">
+                    <div>
+                        <div class="card-icon-header">
+                            <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                            <span class="card-number">#02</span>
+                        </div>
+                        <h3 class="card-title">Dynamic Enterprise Workflow & Approval Engine</h3>
+                        <p class="card-desc">محرك موافقات ديناميكي يعالج الشروط المعقدة في الـ Runtime، مع دعم التفويض، السحب وإعادة الإرسال، الاعتماد الذاتي، الشات المباشر، والـ SLA Auto-Escalation.</p>
+                        <div class="card-tags">
+                            <span class="tag">Runtime Rules</span>
+                            <span class="tag">Approval Task Inbox</span>
+                            <span class="tag">SignalR Realtime</span>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="openModal(2)">
+                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="achievement-card" data-category="workflow">
+                    <div>
+                        <div class="card-icon-header">
+                            <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                            <span class="card-number">#03</span>
+                        </div>
+                        <h3 class="card-title">Advanced Hybrid Penalty & Disciplinary Engine</h3>
+                        <p class="card-desc">نظام أتمتة التدرج التلقائي للمخالفات الإدارية والمالية وفق لائحة العمل المعتمدة، مع الربط المباشر بمحرك الحضور ومسار الاعتراضات.</p>
+                        <div class="card-tags">
+                            <span class="tag">Automated Escalation</span>
+                            <span class="tag">Disciplinary Matrix</span>
+                            <span class="tag">Appeals Workflow</span>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="openModal(3)">
+                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="achievement-card" data-category="attendance">
+                    <div>
+                        <div class="card-icon-header">
+                            <div class="card-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                            <span class="card-number">#04</span>
+                        </div>
+                        <h3 class="card-title">Attendance Processing & Overnight Shift Engine</h3>
+                        <p class="card-desc">محرك معالجة حركات البصمة الحيوية والربط الديناميكي مع الورديات الليلية المتداخلة عبر منتصف الليل (Overnight Shifts) وتنقيتها من التكرار.</p>
+                        <div class="card-tags">
+                            <span class="tag">Overnight Mapping</span>
+                            <span class="tag">Log Deduplication</span>
+                            <span class="tag">Overtime Engine</span>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="openModal(4)">
+                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="achievement-card" data-category="payroll">
+                    <div>
+                        <div class="card-icon-header">
+                            <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
+                            <span class="card-number">#05</span>
+                        </div>
+                        <h3 class="card-title">Contract Versioning & End of Service (EOSB) Engine</h3>
+                        <p class="card-desc">نظام تتبع إصدارات العقود غير القابلة للتعديل العكسي، مع الأتمتة الكاملة لحسابات مكافأة نهاية الخدمة والتسويات المالية.</p>
+                        <div class="card-tags">
+                            <span class="tag">Immutable Versions</span>
+                            <span class="tag">EOSB Settlement</span>
+                            <span class="tag">Clause Framework</span>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="openModal(5)">
+                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="achievement-card" data-category="payroll">
+                    <div>
+                        <div class="card-icon-header">
+                            <div class="card-icon"><i class="fa-solid fa-calculator"></i></div>
+                            <span class="card-number">#06</span>
+                        </div>
+                        <h3 class="card-title">Financial Payroll Engine & Bulk Processing Architecture</h3>
+                        <p class="card-desc">محرك الرواتب والعمليات المالية الجماعية، يتيح معالجة الأجور، البدلات، الاستقطاعات المباشرة، وتجميد المسيرات تاريخياً لآلاف الموظفين وتصدير ملفات البنوك.</p>
+                        <div class="card-tags">
+                            <span class="tag">Bulk Processing</span>
+                            <span class="tag">Financial Components</span>
+                            <span class="tag">Payroll Lock</span>
+                        </div>
+                    </div>
+                    <a class="card-link" onclick="openModal(6)">
+                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Architecture Viewer -->
+    <section class="arch-section" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="arch.tag">مخططات الأنظمة المباشرة</span>
+                <h2 class="section-title" data-i18n="arch.title">استعراض دياجرام المعمارية والتصميم الهيكلي</h2>
+                <p class="section-desc" data-i18n="arch.desc">اختر النظام من القائمة الجانبية وتصفح الصور والدياجرامات المعمارية الخاصة به بالأزرار التالية</p>
+            </div>
+
+            <div class="arch-viewer-box">
+                <div class="arch-sidebar">
+                    <div class="arch-menu-title" data-i18n="arch.selectModule">اختر النظام المعماري:</div>
+                    <div class="arch-menu">
+                        <div class="arch-item active" onclick="switchArch('workflow', this)">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <div>
+                                <h4 data-i18n="arch.item1">Workflow Execution Engine</h4>
+                            </div>
+                        </div>
+                        <div class="arch-item" onclick="switchArch('payroll', this)">
+                            <i class="fa-solid fa-vault"></i>
+                            <div>
+                                <h4 data-i18n="arch.item2">Payroll & Bulk Pipeline</h4>
+                            </div>
+                        </div>
+                        <div class="arch-item" onclick="switchArch('biometrics', this)">
+                            <i class="fa-solid fa-clock"></i>
+                            <div>
+                                <h4 data-i18n="arch.item3">Biometrics & Overnight Shift</h4>
+                            </div>
+                        </div>
+                        <div class="arch-item" onclick="switchArch('hero', this)">
+                            <i class="fa-solid fa-cubes"></i>
+                            <div>
+                                <h4 data-i18n="arch.item4">SaaS Microservices Core</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arch-content">
+                    <div class="arch-image-preview">
+                        <img id="archImg" src="assets/images/02-workflow-engine/image1.jpg" alt="Architecture Diagram">
+                    </div>
+
+                    <!-- Interactive Control Toolbar for Architecture Viewer -->
+                    <div class="gallery-toolbar" style="margin-bottom: 18px;">
+                        <button class="gallery-btn" onclick="prevArchSlide()">◀ الصورة السابقة</button>
+                        <div class="gallery-status-badge" id="archCounter">صورة 1 من 2</div>
+                        <button class="gallery-btn" onclick="nextArchSlide()">الصورة التالية ▶</button>
+                    </div>
+
+                    <div class="arch-info">
+                        <h3 id="archTitle">Dynamic Workflow Execution Engine Diagram</h3>
+                        <p id="archDesc">مخطط معماري يوضح كيفية استقبال الطلب، تقييم الشروط الديناميكية في الـ Runtime، توجيه المهمة للموافق المناسب، التذكير الفوري، والتأثير النهائي على الكيان.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Matrix -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="skills.tag">المهارات التقنية</span>
+                <h2 class="section-title" data-i18n="skills.title">مصفوفة الخبرات والمعمارية التقنية</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-code"></i>
+                        <h3 data-i18n="skill.cat1">Backend & Frameworks</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">C# / ASP.NET Core 8</span>
+                                <span class="skill-level">98%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 98%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">Microservices & gRPC</span>
+                                <span class="skill-level">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">RESTful Web APIs</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-database"></i>
+                        <h3 data-i18n="skill.cat2">Database & Architecture</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">SQL Server / MySQL</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">Entity Framework Core / Dapper</span>
+                                <span class="skill-level">96%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 96%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">Clean Architecture / DDD</span>
+                                <span class="skill-level">94%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 94%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fa-solid fa-gears"></i>
+                        <h3 data-i18n="skill.cat3">Domain & Enterprise</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">HRMS & Payroll Engines</span>
+                                <span class="skill-level">98%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 98%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">Multi-Tenant SaaS Architecture</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-info">
+                                <span class="skill-name">Keycloak SSO & RBAC</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Experience -->
+    <section class="timeline-section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="exp.tag">المسيرة المهنية</span>
+                <h2 class="section-title" data-i18n="exp.title">الخبرات والمشاريع القيادية</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer — System Analysis & Backend Focus</h3>
+                                <div class="timeline-company">Al-Falak Soft (Saudi Arabia) | Sana'a, Yemen</div>
+                            </div>
+                            <span class="timeline-date">March 2025 – Present</span>
+                        </div>
+                        <ul class="timeline-bullets">
+                            <li>قيادة مرحلة التحليل الهندسي وبناء الأنظمة لمنصة HRMS متعددة المستأجرين من الصفر.</li>
+                            <li>تصميم وبناء محرك سير العمل الديناميكي (Dynamic Workflow Engine) وإدارة المهام والتصعيد التلقائي.</li>
+                            <li>تهيئة Keycloak لإدارة الهويات والوصول الموحد (SSO) وتوزيع الصلاحيات (RBAC) عبر موديولات النظام.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer — Backend Specialist</h3>
+                                <div class="timeline-company">Data Trans Company (Contracted for Obeikan Digital Solutions, KSA)</div>
+                            </div>
+                            <span class="timeline-date">March 2024 – March 2025</span>
+                        </div>
+                        <ul class="timeline-bullets">
+                            <li>تطوير خدمات الـ Backend والموديولات الأساسية لمنصة HRMS المعتمدة في السوق السعودي.</li>
+                            <li>تصميم معماريات الـ Microservices ونظام الاتصال المتبادل عالي الأداء باستخدام gRPC.</li>
+                            <li>تطوير وبناء RESTful APIs متقدمة وتكامل البيانات باستخدام SQL Server و Entity Framework Core.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Volunteer Full-Stack Developer</h3>
+                                <div class="timeline-company">RYCAAD Organization (Yemeni Farmers Cooperative Association)</div>
+                            </div>
+                            <span class="timeline-date">January 2022 – January 2024</span>
+                        </div>
+                        <ul class="timeline-bullets">
+                            <li>التطوع لبناء المنصة الرقمية الخيرية لملتقى المزارعين في اليمن باستخدام ASP.NET Core MVC و HTML/CSS.</li>
+                            <li>تطوير خدمات إدارة المحتوى، العضوية، الحجوزات الفورية للمنعقدات، ونظام التنبيهات الآلية.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h3 data-i18n="contact.title">تواصل معي لبناء وتطوير الأنظمة</h3>
+                    <p data-i18n="contact.desc">أنا متاح للفرص الوظيفية في السوق الخليجي (السعودية والإمارات)، والعمل عن بُعد (Remote)، والاستشارات المعمارية.</p>
+
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-details">
+                                <p>البريد الإلكتروني</p>
+                                <h5>abdulrahmanaldoais@gmail.com</h5>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-details">
+                                <p>الهاتف / الواتساب</p>
+                                <h5>+967 775 115 810</h5>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-details">
+                                <p>الموقع الحالي</p>
+                                <h5>صنعاء، اليمن (متاح للانتقال والعمل عن بُعد)</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label data-i18n="form.name">الاسم الكريم</label>
+                        <input type="text" class="form-control" placeholder="أدخل اسمك هنا...">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form.email">البريد الإلكتروني</label>
+                        <input type="email" class="form-control" placeholder="name@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form.message">رسالتك / تفاصيل الفرصة</label>
+                        <textarea class="form-control" placeholder="اكتب رسالتك هنا..."></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="alert('شكراً لتواصلك! تم استلام رسالتك بنجاح.')">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span data-i18n="form.btnSend">إرسال الرسالة</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Abdulrahman Ali Aldoais. All rights reserved. Built with Clean Architecture.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <div class="modal-header-top">
+                <h3 class="modal-title" id="modalTitle">عنوان الإنجاز</h3>
+                <button class="modal-close-btn" onclick="closeModal()">✕ إغلاق</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

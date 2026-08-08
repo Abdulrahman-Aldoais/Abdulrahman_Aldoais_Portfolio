@@ -1,0 +1,126 @@
+{
+    "nav": {
+        "about": "نبذة عني",
+        "achievements": "الإنجازات التقنية",
+        "architecture": "معمارية النظام",
+        "skills": "المهارات",
+        "experience": "الخبرات",
+        "contactBtn": "تواصل معي"
+    },
+    "hero": {
+        "badge": "Enterprise Backend & SaaS Architect",
+        "greeting": "أهلاً بك، أنا",
+        "name": "عبدالرحمن علي الدعيس",
+        "rolePrefix": "متخصص في:",
+        "desc": "مهندس أنظمة برمجية متخصص في تحليل ومعمارية وتطوير الأنظمة المؤسسية المعقدة (HRMS, Payroll, Multi-Tenant SaaS, Workflows) باستخدام ASP.NET Core 8 و Microservices مع خبرة في السوق السعودي والخليجي.",
+        "btnExplore": "استكشف الإنجازات المعمارية",
+        "stat1": "مستخدم في السوق السعودي",
+        "stat2": "توافق زمن UTC العالمي",
+        "stat3": "مسارات موافقات مبرمجة ثابته",
+        "badge1Sub": "Multi-Tenant SaaS",
+        "badge1Title": "Tenant Isolation & UTC",
+        "badge2Sub": "Dynamic Workflow",
+        "badge2Title": "Runtime Rule Engine"
+    },
+    "achieve": {
+        "tag": "الإنجازات والأنظمة",
+        "title": "سلسلة الإنجازات المعمارية في FALAK HR",
+        "desc": "أنظمة وموديولات محورية تم تصميمها وتطويرها لحل أعقد التحديات في المنصات المؤسسية"
+    },
+    "tabs": {
+        "all": "الكل",
+        "saas": "Multi-Tenant & UTC",
+        "workflow": "Workflow Engine",
+        "payroll": "Payroll & Finance",
+        "attendance": "Attendance & Shift"
+    },
+    "cards": {
+        "btnDetails": "معاينة الصور والتفاصيل المعمارية",
+        "card1": {
+            "title": "Multi-Tenant SaaS & Decoupled Timezone Architecture",
+            "desc": "معمارية متكاملة تضمن الفصل التام لبيانات المستأجرين وحل مشاكل الفارق الزمني العالمي عبر معالجة UTC موحدة وتعيين توقيت المستأجر آلياً."
+        },
+        "card2": {
+            "title": "Dynamic Enterprise Workflow & Approval Engine",
+            "desc": "محرك موافقات ديناميكي يعالج الشروط المعقدة في الـ Runtime، مع دعم التفويض، السحب وإعادة الإرسال، الاعتماد الذاتي، الشات المباشر، والـ SLA Auto-Escalation."
+        },
+        "card3": {
+            "title": "Advanced Hybrid Penalty & Disciplinary Engine",
+            "desc": "نظام أتمتة التدرج التلقائي للمخالفات الإدارية والمالية وفق لائحة العمل المعتمدة، مع الربط المباشر بمحرك الحضور ومسار الاعتراضات."
+        },
+        "card4": {
+            "title": "Attendance Processing & Overnight Shift Engine",
+            "desc": "محرك معالجة حركات البصمة الحيوية والربط الديناميكي مع الورديات الليلية المتداخلة عبر منتصف الليل (Overnight Shifts) وتنقيتها من التكرار."
+        },
+        "card5": {
+            "title": "Contract Versioning & End of Service (EOSB) Engine",
+            "desc": "نظام تتبع إصدارات العقود غير القابلة للتعديل العكسي، مع الأتمتة الكاملة لحسابات مكافأة نهاية الخدمة والتسويات المالية."
+        },
+        "card6": {
+            "title": "Financial Payroll Engine & Bulk Processing Architecture",
+            "desc": "محرك الرواتب والعمليات المالية الجماعية، يتيح معالجة الأجور، البدلات، الاستقطاعات المباشرة، وتجميد المسيرات تاريخياً لآلاف الموظفين وتصدير ملفات البنوك."
+        }
+    },
+    "modals": {
+        "prevBtn": "◀ الصورة السابقة",
+        "nextBtn": "الصورة التالية ▶",
+        "closeBtn": "✕ إغلاق",
+        "counterPrefix": "صورة",
+        "counterOf": "من",
+        "modal1": {
+            "title": "معمارية المنصات المشتركة وتوحيد التوقيع الزمني (SaaS Multi-Tenant & UTC Timezone)",
+            "content": "<p>في المنصات المؤسسية المعقدة، يُعد عزل بيانات العملاء وحل الفارق الزمني من أثر التحديات. تم تصميم هذه المعمارية لمنع تداخل المناطق الزمنية بين خادم الاستضافة والشركات العاملة في مناطق مختلفة.</p><br><h4>الركائز المعمارية الرئيسية:</h4><ul><li><b>UTC Standard:</b> تخزين كافة التواريخ بـ UTC بنمط ISO 8601 متبوع بالحرف 'Z'.</li><li><b>Tenant Timezone Provider:</b> تحويل التوقيع الزمني المحلي للمستأجر قبل مقارنات ورديات الحضور.</li><li><b>EF Core Converters:</b> محولات قيم مخصصة تُبقي التواريخ بنوع DateTimeKind.Utc عند القراءة والكتابة.</li></ul>"
+        },
+        "modal2": {
+            "title": "محرك سير العمل والموافقات الديناميكية (Dynamic Enterprise Workflow Engine)",
+            "content": "<p>محرك موافقات مرن يعالج شروط الموافقات المعقدة في الـ Runtime دون الحاجة لتعديل أو كتابة أي كود برمجي ثابت (Zero Hardcoded Flow).</p><br><h4>المميزات التقنية:</h4><ul><li><b>Runtime Rules Processor:</b> تقييم الشروط (القيم المالية، الأيام، المودويل) ديناميكياً.</li><li><b>Task Inbox Lifecycle:</b> إدارة سورة حياة الطلب (موافقة، رفض، طلب بيانات، تفويض، تصعيد).</li><li><b>Realtime WebSockets:</b> إشعارات لحظية للموافقين وشات مباشر داخل كل طلب عبر SignalR.</li></ul>"
+        },
+        "modal3": {
+            "title": "محرك أتمتة الجزاءات ولائحة الانضباط (Hybrid Penalty & Disciplinary Engine)",
+            "content": "<p>أتمتة تطبيق لائحة العقوبات والجزاءات الإدارية والمالية وفق نظام العمل السعودي دون أي تدخل بشري لمنع التحيز الأخطاء الحسابية.</p><br><h4>المميزات التقنية:</h4><ul><li><b>Automated Escalation:</b> التدرج التلقائي للمخالفة بناءً على السجل السلوكي للموظف.</li><li><b>Attendance Linkage:</b> ربط التأخيرات والغياب غير المبرر بإنشاء مخالفات مسودة آلياً.</li><li><b>Appeals Path:</b> مسار اعتراض رسمي يمر بمحرك الموافقات قبل النفاذ المالي.</li></ul>"
+        },
+        "modal4": {
+            "title": "محرك معالجة البصمة والورديات الليلية (Biometrics & Overnight Shift Engine)",
+            "content": "<p>معالجة ملايين حركات أجهزة البصمة وتنقيتها من التكرار مع دعم كامل للورديات الليلية التي تمتد عبر منتصف الليل (Overnight Shifts).</p><br><h4>المميزات التقنية:</h4><ul><li><b>Overnight Mapping:</b> خوارزمية ربط الانصراف المبكر أو المتأخر في اليوم التالي بالوردية الصحيحة.</li><li><b>Log Deduplication:</b> خوارزمية تصفية الحركات المكررة خلال فترة زمنية محددة.</li><li><b>Overtime Calculator:</b> احتساب الساعات الإضافية والتأخيرات وتصدير النتائج لمحرك الرواتب.</li></ul>"
+        },
+        "modal5": {
+            "title": "نظام إصدارات العقود ومكافأة نهاية الخدمة (Contract Versioning & EOSB Engine)",
+            "content": "<p>تتبع التاريخ المالي للعقود بشكل غير قابل للتعديل العكسي مع أتمتة حسابات مكافأة نهاية الخدمة والتسويات المالية وفق نظام العمل.</p><br><h4>المميزات التقنية:</h4><ul><li><b>Immutable Versioning:</b> إنشاء إصدار جديد للعقد عند كل تعديل مالي دون حذف النسخ السابقة.</li><li><b>EOSB Settlement Engine:</b> حساب الاستحقاق آلياً حسب سنوات الخدمة وسبب إنهاء العلاقة التعاقدية.</li></ul>"
+        },
+        "modal6": {
+            "title": "محرك الرواتب والعمليات المالية الجماعية (Financial Payroll & Bulk Processing Pipeline)",
+            "content": "<p>محرك المعالجة الجماعية للرواتب، البدلات، والأقساط لآلاف الموظفين في ثوانٍ معدودة مع دعم القفل التاريخي للمسيرات والتصدير البنكي المعتمد.</p><br><h4>المميزات التقنية:</h4><ul><li><b>Bulk Assignment Pipeline:</b> تخصيص البدلات والاستقطاعات لآلاف الموظفين دفعة واحدة.</li><li><b>Automated Deduction Linkage:</b> سحب السلف والمخالفات المعتمدة آلياً وإدراجها بالمسيرة.</li><li><b>Payroll Locking & SIF Export:</b> قفل الحسابات تاريخياً وتصدير ملفات البنوك بنظام SIF.</li></ul>"
+        }
+    },
+    "arch": {
+        "tag": "مخططات الأنظمة المباشرة",
+        "title": "استعراض دياجرام المعمارية والتصميم الهيكلي",
+        "desc": "اختر النظام من القائمة الجانبية وتصفح الصور والدياجرامات المعمارية الخاصة به بالأزرار التالية",
+        "selectModule": "اختر النظام المعماري:",
+        "item1": "Workflow Execution Engine",
+        "item2": "Payroll & Bulk Pipeline",
+        "item3": "Biometrics & Overnight Shift",
+        "item4": "SaaS Microservices Core"
+    },
+    "skills": {
+        "tag": "المهارات التقنية",
+        "title": "مصفوفة الخبرات والمعمارية التقنية",
+        "cat1": "Backend & Frameworks",
+        "cat2": "Database & Architecture",
+        "cat3": "Domain & Enterprise"
+    },
+    "exp": {
+        "tag": "المسيرة المهنية",
+        "title": "الخبرات والمشاريع القيادية"
+    },
+    "contact": {
+        "title": "تواصل معي لبناء وتطوير الأنظمة",
+        "desc": "أنا متاح للفرص الوظيفية في السوق الخليجي (السعودية والإمارات)، والعمل عن بُعد (Remote)، والاستشارات المعمارية."
+    },
+    "form": {
+        "name": "الاسم الكريم",
+        "email": "البريد الإلكتروني",
+        "message": "رسالتك / تفاصيل الفرصة",
+        "btnSend": "إرسال الرسالة"
+    }
+}
