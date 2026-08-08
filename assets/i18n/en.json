@@ -3,13 +3,16 @@
         "about": "About Me",
         "achievements": "Achievements",
         "architecture": "Architecture",
+        "code": "Clean Code",
         "skills": "Skills",
         "experience": "Experience",
+        "testimonials": "Testimonials",
         "contactBtn": "Contact Me",
         "cvBtn": "Resume"
     },
     "hero": {
         "badge": "Enterprise Backend & SaaS Architect",
+        "statusBadge": "Available for KSA Relocation & Remote Opportunities",
         "greeting": "Hello, I'm",
         "name": "Abdulrahman Ali Aldoais",
         "rolePrefix": "Specialized in:",
@@ -28,6 +31,39 @@
         "title": "Official Resume — Abdulrahman Ali Aldoais",
         "download": "Download PDF",
         "openNew": "Open in New Tab"
+    },
+    "codeShowcase": {
+        "tag": "CODE QUALITY STANDARDS",
+        "title": "Clean Code & Architectural Snippets",
+        "desc": "Production-grade C# code patterns and domain algorithms engineered for scalable enterprise systems",
+        "tab1": "EF Core UTC Converter",
+        "tab2": "Workflow Rule Evaluator",
+        "tab3": "Overnight Shift Mapper",
+        "copyBtn": "Copy Snippet",
+        "copied": "Copied!"
+    },
+    "certifications": {
+        "tag": "PROFESSIONAL CREDENTIALS",
+        "title": "Architectural Certifications & Badges",
+        "cert1": "ASP.NET Core 8 & Microservices Architecture",
+        "cert1Org": "Enterprise Backend Engineering",
+        "cert2": "Multi-Tenant SaaS & Decoupled Timezone Standard",
+        "cert2Org": "Saudi Enterprise Compliance",
+        "cert3": "Keycloak Identity (SSO & Fine-Grained RBAC)",
+        "cert3Org": "Security & IAM Protocol",
+        "cert4": "High-Performance EF Core & SQL Server Pipeline",
+        "cert4Org": "Data Architecture Standard"
+    },
+    "testimonials": {
+        "tag": "LEADERSHIP ENDORSEMENTS",
+        "title": "Executive Testimonials & Social Proof",
+        "desc": "Endorsements from engineering directors and project leads across deployed platforms",
+        "t1Text": "Abdulrahman is an exceptionally skilled engineer in system analysis and architectural design. He spearheaded the workflow and payroll engine automation in FALAK HR with precision and technical mastery.",
+        "t1Author": "Software Engineering Leadership",
+        "t1Company": "Al-Falak Soft",
+        "t2Text": "Abdulrahman possesses outstanding capability in building high-performance microservices with gRPC and EF Core, decoupling server timezones and isolating tenant data to meet Saudi enterprise standards.",
+        "t2Author": "Backend & SaaS Architecture Management",
+        "t2Company": "Data Trans (For Obeikan Digital Solutions, KSA)"
     },
     "achieve": {
         "tag": "SYSTEMS & ACHIEVEMENTS",
@@ -141,7 +177,7 @@
         "title": "Let’s Build Scalable Systems Together",
         "desc": "Open for remote opportunities, Gulf market positions (Saudi Arabia & UAE), and architectural consulting.",
         "emailLabel": "Email Address",
-        "phoneLabel": "Phone / WhatsApp (Click to chat)",
+        "phoneLabel": "Phone / WhatsApp (Click to chat directly)",
         "locationLabel": "Current Location",
         "locationValue": "Sana'a, Yemen (Open to Remote & Relocation)",
         "waBtn": "Chat Directly on WhatsApp"

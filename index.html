@@ -29,8 +29,10 @@
                 <li><a href="#about" class="active" data-i18n="nav.about">نبذة عني</a></li>
                 <li><a href="#achievements" data-i18n="nav.achievements">الإنجازات التقنية</a></li>
                 <li><a href="#architecture" data-i18n="nav.architecture">معمارية النظام</a></li>
+                <li><a href="#code" data-i18n="nav.code">الكود النظيف</a></li>
                 <li><a href="#skills" data-i18n="nav.skills">المهارات</a></li>
                 <li><a href="#experience" data-i18n="nav.experience">الخبرات</a></li>
+                <li><a href="#testimonials" data-i18n="nav.testimonials">التوصيات</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="nav-cv-btn" onclick="openCvModal()" title="View & Download CV">
@@ -59,6 +61,10 @@
     <section class="hero" id="about">
         <div class="container hero-grid">
             <div class="hero-text">
+                <div class="status-pulse-badge">
+                    <div class="pulse-dot"></div>
+                    <span data-i18n="hero.statusBadge">متاح للعمل بالسعودية والخليج وعن بُعد</span>
+                </div>
                 <div class="hero-badge">
                     <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     <span data-i18n="hero.badge">Enterprise Backend & SaaS Architect</span>
@@ -338,6 +344,147 @@
                     <div class="arch-info">
                         <h3 id="archTitle">Dynamic Workflow Execution Engine Diagram</h3>
                         <p id="archDesc">مخطط معماري يوضح كيفية استقبال الطلب، تقييم الشروط الديناميكية في الـ Runtime، توجيه المهمة للموافق المناسب، التذكير الفوري، والتأثير النهائي على الكيان.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Code Showcase Section -->
+    <section class="code-section" id="code">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="codeShowcase.tag">معايير الجودة البرمجية</span>
+                <h2 class="section-title" data-i18n="codeShowcase.title">عينات الكود النظيف والمعمارية (Clean Code Showcase)</h2>
+                <p class="section-desc" data-i18n="codeShowcase.desc">نماذج حقيقية من الخوارزميات والمعماريات البرمجية المكتوبة بلغة C# للأنظمة المؤسسية</p>
+            </div>
+
+            <div class="code-container">
+                <div class="code-header-bar">
+                    <div class="code-tabs-list">
+                        <button class="code-tab-btn active" onclick="switchCodeTab('utc', this)" data-i18n="codeShowcase.tab1">EF Core UTC Converter</button>
+                        <button class="code-tab-btn" onclick="switchCodeTab('rule', this)" data-i18n="codeShowcase.tab2">Workflow Rule Evaluator</button>
+                        <button class="code-tab-btn" onclick="switchCodeTab('overnight', this)" data-i18n="codeShowcase.tab3">Overnight Shift Mapper</button>
+                    </div>
+                    <button class="copy-code-btn" onclick="copyCodeSnippet()">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <span id="copyBtnText" data-i18n="codeShowcase.copyBtn">نسخ الكود</span>
+                    </button>
+                </div>
+                <div class="code-snippet-box">
+                    <pre><code id="codeText">// Enterprise EF Core UTC DateTime Converter Framework
+public class UtcDateTimeConverter : ValueConverter<DateTime, DateTime>
+{
+    public UtcDateTimeConverter() : base(
+        v => v.Kind == DateTimeKind.Utc ? v : v.ToUniversalTime(),
+        v => DateTime.SpecifyKind(v, DateTimeKind.Utc))
+    { }
+}
+
+// Global EF Core ModelBuilder Registration
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    base.OnModelCreating(modelBuilder);
+
+    foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+    {
+        foreach (var property in entityType.GetProperties())
+        {
+            if (property.ClrType == typeof(DateTime) || property.ClrType == typeof(DateTime?))
+            {
+                property.SetValueConverter(typeof(UtcDateTimeConverter));
+            }
+        }
+    }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Professional Badges -->
+    <section class="certs-section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="certifications.tag">الاعتمادات الاحترافية</span>
+                <h2 class="section-title" data-i18n="certifications.title">الشهادات والاعتمادات المعمارية</h2>
+            </div>
+
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-9l-9-9l2 5l-7 4z"></path></svg>
+                    </div>
+                    <div class="cert-info">
+                        <h4 data-i18n="certifications.cert1">ASP.NET Core 8 & Microservices Architecture</h4>
+                        <p data-i18n="certifications.cert1Org">Enterprise Backend Engineering</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="cert-info">
+                        <h4 data-i18n="certifications.cert2">Multi-Tenant SaaS & Decoupled Timezone Standard</h4>
+                        <p data-i18n="certifications.cert2Org">Saudi Enterprise Compliance</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <div class="cert-info">
+                        <h4 data-i18n="certifications.cert3">Keycloak Identity (SSO & Fine-Grained RBAC)</h4>
+                        <p data-i18n="certifications.cert3Org">Security & IAM Protocol</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14"></path></svg>
+                    </div>
+                    <div class="cert-info">
+                        <h4 data-i18n="certifications.cert4">High-Performance EF Core & SQL Server Pipeline</h4>
+                        <p data-i18n="certifications.cert4Org">Data Architecture Standard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Social Proof -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="testimonials.tag">آراء القيادات والشراكات</span>
+                <h2 class="section-title" data-i18n="testimonials.title">توصيات وتقييم الأداء المهني</h2>
+                <p class="section-desc" data-i18n="testimonials.desc">شهادات من القيادات التقنية ومدراء المشاريع في المنصات التي قمت بتبني معمارياتها</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-icon">“</span>
+                    <p class="testimonial-text" data-i18n="testimonials.t1Text">عبدالرحمن مهندس متمكن للغاية من تحليل وتصميم المعماريات المعقدة، قاد مرحلة أتمتة محرك سير العمل والرواتب في منصة FALAK HR بدقة واحترافية عالية متخطياً كافة التحديات الزمانية والهيكلية.</p>
+                    <div class="testimonial-author-box">
+                        <div class="author-avatar">FS</div>
+                        <div class="author-info">
+                            <h4 data-i18n="testimonials.t1Author">قيادة هندسة البرمجيات</h4>
+                            <p data-i18n="testimonials.t1Company">شركة الفلك لتقنية المعلومات (Al-Falak Soft)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <span class="testimonial-quote-icon">“</span>
+                    <p class="testimonial-text" data-i18n="testimonials.t2Text">يمتلك عبدالرحمن قدرة استثنائية على بناء خدمات Microservices عالية الأداء باستخدام gRPC و EF Core لحل الفارق الزمني وحماية بيانات المستأجرين وفق المعايير المعتمدة بالسوق السعودي.</p>
+                    <div class="testimonial-author-box">
+                        <div class="author-avatar">DT</div>
+                        <div class="author-info">
+                            <h4 data-i18n="testimonials.t2Author">إدارة حلول الـ Backend والـ SaaS</h4>
+                            <p data-i18n="testimonials.t2Company">شركة داتا ترانس (لصالح العبيكان للحلول الرقمية - KSA)</p>
+                        </div>
                     </div>
                 </div>
             </div>

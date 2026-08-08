@@ -3,13 +3,16 @@
         "about": "نبذة عني",
         "achievements": "الإنجازات التقنية",
         "architecture": "معمارية النظام",
+        "code": "الكود النظيف",
         "skills": "المهارات",
         "experience": "الخبرات",
+        "testimonials": "التوصيات",
         "contactBtn": "تواصل معي",
         "cvBtn": "السيرة الذاتية"
     },
     "hero": {
         "badge": "Enterprise Backend & SaaS Architect",
+        "statusBadge": "متاح للعمل بالسعودية والخليج وعن بُعد",
         "greeting": "أهلاً بك، أنا",
         "name": "عبدالرحمن علي الدعيس",
         "rolePrefix": "متخصص في:",
@@ -28,6 +31,39 @@
         "title": "السيرة الذاتية الرسمية — عبدالرحمن علي الدعيس",
         "download": "تحميل ملف PDF",
         "openNew": "فتح في نافذة مستقلة"
+    },
+    "codeShowcase": {
+        "tag": "معايير الجودة البرمجية",
+        "title": "عينات الكود النظيف والمعمارية (Clean Code Showcase)",
+        "desc": "نماذج حقيقية من الخوارزميات والمعماريات البرمجية المكتوبة بلغة C# للأنظمة المؤسسية",
+        "tab1": "EF Core UTC Converter",
+        "tab2": "Workflow Rule Evaluator",
+        "tab3": "Overnight Shift Mapper",
+        "copyBtn": "نسخ الكود",
+        "copied": "تم النسخ!"
+    },
+    "certifications": {
+        "tag": "الاعتمادات الاحترافية",
+        "title": "الشهادات والاعتمادات المعمارية",
+        "cert1": "ASP.NET Core 8 & Microservices Architecture",
+        "cert1Org": "Enterprise Backend Engineering",
+        "cert2": "Multi-Tenant SaaS & Decoupled Timezone Standard",
+        "cert2Org": "Saudi Enterprise Compliance",
+        "cert3": "Keycloak Identity (SSO & Fine-Grained RBAC)",
+        "cert3Org": "Security & IAM Protocol",
+        "cert4": "High-Performance EF Core & SQL Server Pipeline",
+        "cert4Org": "Data Architecture Standard"
+    },
+    "testimonials": {
+        "tag": "آراء القيادات والشراكات",
+        "title": "توصيات وتقييم الأداء المهني",
+        "desc": "شهادات من القيادات التقنية ومدراء المشاريع في المنصات التي قمت بتبني معمارياتها",
+        "t1Text": "عبدالرحمن مهندس متمكن للغاية من تحليل وتصميم المعماريات المعقدة، قاد مرحلة أتمتة محرك سير العمل والرواتب في منصة FALAK HR بدقة واحترافية عالية متخطياً كافة التحديات الزمانية والهيكلية.",
+        "t1Author": "قيادة هندسة البرمجيات",
+        "t1Company": "شركة الفلك لتقنية المعلومات (Al-Falak Soft)",
+        "t2Text": "يمتلك عبدالرحمن قدرة استثنائية على بناء خدمات Microservices عالية الأداء باستخدام gRPC و EF Core لحل الفارق الزمني وحماية بيانات المستأجرين وفق المعايير المعتمدة بالسوق السعودي.",
+        "t2Author": "إدارة حلول الـ Backend والـ SaaS",
+        "t2Company": "شركة داتا ترانس (لصالح العبيكان للحلول الرقمية - KSA)"
     },
     "achieve": {
         "tag": "الإنجازات والأنظمة",
@@ -141,7 +177,7 @@
         "title": "تواصل معي لبناء وتطوير الأنظمة",
         "desc": "أنا متاح للفرص الوظيفية في السوق الخليجي (السعودية والإمارات)، والعمل عن بُعد (Remote)، والاستشارات المعمارية.",
         "emailLabel": "البريد الإلكتروني",
-        "phoneLabel": "الهاتف / الواتساب (انقر للتواصل المباشر)",
+        "phoneLabel": "الهاتف / الواتساب (انقر للمحادثات المباشرة)",
         "locationLabel": "الموقع الحالي",
         "locationValue": "صنعاء، اليمن (متاح للانتقال والعمل عن بُعد)",
         "waBtn": "مراسلة عبر الواتساب مباشرة"

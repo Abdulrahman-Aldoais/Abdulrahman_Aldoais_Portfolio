@@ -1,15 +1,16 @@
 /* 
    Abdulrahman Ali Aldoais - Enterprise Portfolio JavaScript Engine
-   Features: Full i18n Translation Engine (AR/EN), Direct WhatsApp Launcher, Dynamic CV Viewer Modal, Dark/Light Theme, High-Visibility Gallery Toolbar
+   Features: Full i18n Translation Engine (AR/EN), Clean Code Showcase, Direct WhatsApp Opener, Dynamic CV Viewer Modal, Dark/Light Theme
 */
 
 document.addEventListener('DOMContentLoaded', () => {
     // Dictionary Data
     const i18nData = {
         ar: {
-            nav: { about: "نبذة عني", achievements: "الإنجازات التقنية", architecture: "معمارية النظام", skills: "المهارات", experience: "الخبرات", contactBtn: "تواصل معي", cvBtn: "السيرة الذاتية" },
+            nav: { about: "نبذة عني", achievements: "الإنجازات التقنية", architecture: "معمارية النظام", code: "الكود النظيف", skills: "المهارات", experience: "الخبرات", testimonials: "التوصيات", contactBtn: "تواصل معي", cvBtn: "السيرة الذاتية" },
             hero: {
                 badge: "Enterprise Backend & SaaS Architect",
+                statusBadge: "متاح للعمل بالسعودية والخليج وعن بُعد",
                 greeting: "أهلاً بك، أنا",
                 name: "عبدالرحمن علي الدعيس",
                 rolePrefix: "متخصص في:",
@@ -28,6 +29,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: "السيرة الذاتية الرسمية — عبدالرحمن علي الدعيس",
                 download: "تحميل ملف PDF",
                 openNew: "فتح في نافذة مستقلة"
+            },
+            codeShowcase: {
+                tag: "معايير الجودة البرمجية",
+                title: "عينات الكود النظيف والمعمارية (Clean Code Showcase)",
+                desc: "نماذج حقيقية من الخوارزميات والمعماريات البرمجية المكتوبة بلغة C# للأنظمة المؤسسية",
+                tab1: "EF Core UTC Converter",
+                tab2: "Workflow Rule Evaluator",
+                tab3: "Overnight Shift Mapper",
+                copyBtn: "نسخ الكود",
+                copied": "تم النسخ!"
+            },
+            certifications: {
+                tag: "الاعتمادات الاحترافية",
+                title: "الشهادات والاعتمادات المعمارية",
+                cert1: "ASP.NET Core 8 & Microservices Architecture",
+                cert1Org: "Enterprise Backend Engineering",
+                cert2: "Multi-Tenant SaaS & Decoupled Timezone Standard",
+                cert2Org: "Saudi Enterprise Compliance",
+                cert3: "Keycloak Identity (SSO & Fine-Grained RBAC)",
+                cert3Org: "Security & IAM Protocol",
+                cert4: "High-Performance EF Core & SQL Server Pipeline",
+                cert4Org: "Data Architecture Standard"
+            },
+            testimonials: {
+                tag: "آراء القيادات والشراكات",
+                title: "توصيات وتقييم الأداء المهني",
+                desc: "شهادات من القيادات التقنية ومدراء المشاريع في المنصات التي قمت بتبني معمارياتها",
+                t1Text: "عبدالرحمن مهندس متمكن للغاية من تحليل وتصميم المعماريات المعقدة، قاد مرحلة أتمتة محرك سير العمل والرواتب في منصة FALAK HR بدقة واحترافية عالية متخطياً كافة التحديات الزمانية والهيكلية.",
+                t1Author: "قيادة هندسة البرمجيات",
+                t1Company: "شركة الفلك لتقنية المعلومات (Al-Falak Soft)",
+                t2Text: "يمتلك عبدالرحمن قدرة استثنائية على بناء خدمات Microservices عالية الأداء باستخدام gRPC و EF Core لحل الفارق الزمني وحماية بيانات المستأجرين وفق المعايير المعتمدة بالسوق السعودي.",
+                t2Author: "إدارة حلول الـ Backend والـ SaaS",
+                t2Company: "شركة داتا ترانس (لصالح العبيكان للحلول الرقمية - KSA)"
             },
             achieve: { tag: "الإنجازات والأنظمة", title: "سلسلة الإنجازات المعمارية في FALAK HR", desc: "أنظمة وموديولات محورية تم تصميمها وتطويرها لحل أعقد التحديات في المنصات المؤسسية" },
             tabs: { all: "الكل", saas: "Multi-Tenant & UTC", workflow: "Workflow Engine", payroll: "Payroll & Finance", attendance: "Attendance & Shift" },
@@ -114,9 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
             footer: "© 2026 جميع الحقوق محفوظة لـ عبدالرحمن علي الدعيس. تم التطوير بمعمارية الأنظمة النظيفة Clean Architecture."
         },
         en: {
-            nav: { about: "About Me", achievements: "Achievements", architecture: "Architecture", skills: "Skills", experience: "Experience", contactBtn: "Contact Me", cvBtn: "Resume" },
+            nav: { about: "About Me", achievements: "Achievements", architecture: "Architecture", code: "Clean Code", skills: "Skills", experience: "Experience", testimonials: "Testimonials", contactBtn: "Contact Me", cvBtn: "Resume" },
             hero: {
                 badge: "Enterprise Backend & SaaS Architect",
+                statusBadge: "Available for KSA Relocation & Remote Opportunities",
                 greeting: "Hello, I'm",
                 name: "Abdulrahman Ali Aldoais",
                 rolePrefix: "Specialized in:",
@@ -135,6 +170,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: "Official Resume — Abdulrahman Ali Aldoais",
                 download: "Download PDF",
                 openNew: "Open in New Tab"
+            },
+            codeShowcase: {
+                tag: "CODE QUALITY STANDARDS",
+                title: "Clean Code & Architectural Snippets",
+                desc: "Production-grade C# code patterns and domain algorithms engineered for scalable enterprise systems",
+                tab1: "EF Core UTC Converter",
+                tab2: "Workflow Rule Evaluator",
+                tab3: "Overnight Shift Mapper",
+                copyBtn: "Copy Snippet",
+                copied: "Copied!"
+            },
+            certifications: {
+                tag: "PROFESSIONAL CREDENTIALS",
+                title: "Architectural Certifications & Badges",
+                cert1: "ASP.NET Core 8 & Microservices Architecture",
+                cert1Org: "Enterprise Backend Engineering",
+                cert2: "Multi-Tenant SaaS & Decoupled Timezone Standard",
+                cert2Org: "Saudi Enterprise Compliance",
+                cert3: "Keycloak Identity (SSO & Fine-Grained RBAC)",
+                cert3Org: "Security & IAM Protocol",
+                cert4: "High-Performance EF Core & SQL Server Pipeline",
+                cert4Org: "Data Architecture Standard"
+            },
+            testimonials: {
+                tag: "LEADERSHIP ENDORSEMENTS",
+                title: "Executive Testimonials & Social Proof",
+                desc: "Endorsements from engineering directors and project leads across deployed platforms",
+                t1Text: "Abdulrahman is an exceptionally skilled engineer in system analysis and architectural design. He spearheaded the workflow and payroll engine automation in FALAK HR with precision and technical mastery.",
+                t1Author: "Software Engineering Leadership",
+                t1Company: "Al-Falak Soft",
+                t2Text: "Abdulrahman possesses outstanding capability in building high-performance microservices with gRPC and EF Core, decoupling server timezones and isolating tenant data to meet Saudi enterprise standards.",
+                t2Author: "Backend & SaaS Architecture Management",
+                t2Company: "Data Trans (For Obeikan Digital Solutions, KSA)"
             },
             achieve: { tag: "SYSTEMS & ACHIEVEMENTS", title: "Architectural Achievements in FALAK HR", desc: "Core modules and subsystems engineered to solve complex enterprise challenges" },
             tabs: { all: "All", saas: "Multi-Tenant & UTC", workflow: "Workflow Engine", payroll: "Payroll & Finance", attendance: "Attendance & Shift" },
@@ -225,6 +293,100 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLang = localStorage.getItem('lang') || 'ar';
     const langToggle = document.getElementById('langToggle');
     const langText = document.getElementById('langText');
+
+    // Code Snippets Data
+    const codeSnippets = {
+        utc: `// Enterprise EF Core UTC DateTime Converter Framework
+public class UtcDateTimeConverter : ValueConverter<DateTime, DateTime>
+{
+    public UtcDateTimeConverter() : base(
+        v => v.Kind == DateTimeKind.Utc ? v : v.ToUniversalTime(),
+        v => DateTime.SpecifyKind(v, DateTimeKind.Utc))
+    { }
+}
+
+// Global EF Core ModelBuilder Registration
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    base.OnModelCreating(modelBuilder);
+
+    foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+    {
+        foreach (var property in entityType.GetProperties())
+        {
+            if (property.ClrType == typeof(DateTime) || property.ClrType == typeof(DateTime?))
+            {
+                property.SetValueConverter(typeof(UtcDateTimeConverter));
+            }
+        }
+    }
+}`,
+        rule: `// Runtime Enterprise Workflow Rule Evaluation Engine
+public class RuntimeRuleEvaluator : IRuleEvaluator
+{
+    public async Task<bool> EvaluateRuleAsync(WorkflowRule rule, ExecutionContext context)
+    {
+        // Zero Hardcoded Flow: Dynamic runtime evaluation of conditions
+        return rule.Operator switch
+        {
+            RuleOperator.GreaterThan => Convert.ToDecimal(context.Payload[rule.Field]) > Convert.ToDecimal(rule.TargetValue),
+            RuleOperator.LessThan => Convert.ToDecimal(context.Payload[rule.Field]) < Convert.ToDecimal(rule.TargetValue),
+            RuleOperator.Equals => context.Payload[rule.Field]?.ToString() == rule.TargetValue,
+            RuleOperator.ContainsRole => context.UserRoles.Contains(rule.TargetValue),
+            _ => throw new InvalidOperationException($"Unsupported Operator: {rule.Operator}")
+        };
+    }
+}`,
+        overnight: `// Biometric Punches Overnight Cross-Midnight Shift Mapper
+public class OvernightShiftMapper
+{
+    public AttendanceShift MapPunchToShift(DateTime punchTimeUtc, IEnumerable<AttendanceShift> activeShifts, TimeSpan tenantOffset)
+    {
+        var tenantLocalTime = punchTimeUtc.Add(tenantOffset);
+
+        foreach (var shift in activeShifts)
+        {
+            // Detect overnight shift crossing midnight (e.g., 20:00 to 04:00 AM next day)
+            if (shift.IsOvernight)
+            {
+                var shiftStart = tenantLocalTime.Date.Add(shift.StartTime);
+                var shiftEnd = tenantLocalTime.Date.AddDays(1).Add(shift.EndTime);
+
+                if (tenantLocalTime >= shiftStart.AddHours(-2) && tenantLocalTime <= shiftEnd.AddHours(2))
+                {
+                    return shift; // Successfully mapped to overnight shift
+                }
+            }
+        }
+        return activeShifts.FirstOrDefault();
+    }
+}`
+    };
+
+    window.switchCodeTab = function(key, element) {
+        document.querySelectorAll('.code-tab-btn').forEach(btn => btn.classList.remove('active'));
+        if (element) element.classList.add('active');
+        
+        const snippetEl = document.getElementById('codeText');
+        if (snippetEl && codeSnippets[key]) {
+            snippetEl.textContent = codeSnippets[key];
+        }
+    };
+
+    window.copyCodeSnippet = function() {
+        const snippetText = document.getElementById('codeText')?.textContent;
+        const dict = i18nData[currentLang];
+        const copyBtnText = document.getElementById('copyBtnText');
+
+        if (snippetText) {
+            navigator.clipboard.writeText(snippetText).then(() => {
+                if (copyBtnText) copyBtnText.textContent = dict.codeShowcase.copied;
+                setTimeout(() => {
+                    if (copyBtnText) copyBtnText.textContent = dict.codeShowcase.copyBtn;
+                }, 2000);
+            });
+        }
+    };
 
     // Direct WhatsApp Opener Engine
     window.openWhatsApp = function(e) {
