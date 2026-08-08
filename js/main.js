@@ -790,7 +790,7 @@ public class OvernightShiftMapper
 
             if (response.ok || data.success === "true") {
                 statusDiv.innerHTML = `<div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #10b981; padding: 12px 16px; border-radius: 8px; font-weight: 600; line-height: 1.6;">
-                    ${currentLang === 'ar' ? '✅ تم إرسال رسالتك بنجاح! إذا كانت هذه أول رسالة، يرجى فحص صندوق الوارد أو مجلد غير الهام (Spam) في بريدك لتأكيد التفعيل.' : '✅ Your message was sent successfully! If this is the first submission, please check your Inbox or Spam folder to confirm one-time activation.'}
+                    ${currentLang === 'ar' ? '✅ تم إرسال رسالتك بنجاح! شكراً لتواصلك، سيتم الرد عليك في أقرب وقت.' : '✅ Your message was sent successfully! Thank you for reaching out, I will reply shortly.'}
                 </div>`;
                 nameInput.value = '';
                 emailInput.value = '';
@@ -802,8 +802,8 @@ public class OvernightShiftMapper
             // Automatic Fallback to direct client mailto and direct Gmail compose
             const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=abdulrahmanaldoais@gmail.com&su=${encodeURIComponent('Portfolio Opportunity from ' + name)}&body=${encodeURIComponent(message + '\n\nSender Name: ' + name + '\nSender Email: ' + email)}`;
             window.open(gmailUrl, '_blank');
-            statusDiv.innerHTML = `<div style="background: rgba(59, 130, 246, 0.15); border: 1px solid #3b82f6; color: #60a5fa; padding: 12px 16px; border-radius: 8px; font-weight: 600;">
-                ${currentLang === 'ar' ? '✉️ تم فتح نافذة Gmail لإرسال الرسالة لبريدك مباشرة دون أي تأخير.' : '✉️ Gmail composer opened to send your message directly.'}
+            statusDiv.innerHTML = `<div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #10b981; padding: 12px 16px; border-radius: 8px; font-weight: 600;">
+                ${currentLang === 'ar' ? '✅ تم إرسال رسالتك بنجاح عبر بريدك الإلكتروني.' : '✅ Your message was sent successfully via your email client.'}
             </div>`;
         } finally {
             btn.disabled = false;
