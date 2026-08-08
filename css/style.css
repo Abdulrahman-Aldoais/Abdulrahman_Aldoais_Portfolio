@@ -781,18 +781,37 @@ textarea.form-control { resize: vertical; min-height: 110px; }
 }
 
 .exec-card-val {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-main);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     word-break: break-all;
 }
 
-.exec-card-sub {
-    font-size: 0.82rem;
+.exec-card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    font-weight: 600;
     color: var(--accent-blue);
-    margin: 0;
-    font-weight: 500;
+}
+
+.action-arrow {
+    transition: var(--transition);
+    display: inline-block;
+}
+
+[dir="rtl"] .action-arrow {
+    transform: scaleX(-1);
+}
+
+.exec-contact-card:hover .action-arrow {
+    transform: translateX(5px);
+}
+
+[dir="rtl"] .exec-contact-card:hover .action-arrow {
+    transform: scaleX(-1) translateX(5px);
 }
 
 .card-location {
@@ -802,6 +821,38 @@ textarea.form-control { resize: vertical; min-height: 110px; }
 
 [data-theme="light"] .card-location {
     background: rgba(241, 245, 249, 0.9);
+}
+
+/* Quick Communication Toolbar */
+.contact-utility-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+}
+
+.utility-pill-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.utility-pill-btn:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 @media (max-width: 992px) {
