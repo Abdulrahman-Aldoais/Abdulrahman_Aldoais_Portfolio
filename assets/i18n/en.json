@@ -141,9 +141,10 @@
         "title": "Let’s Build Scalable Systems Together",
         "desc": "Open for remote opportunities, Gulf market positions (Saudi Arabia & UAE), and architectural consulting.",
         "emailLabel": "Email Address",
-        "phoneLabel": "Phone / WhatsApp",
+        "phoneLabel": "Phone / WhatsApp (Click to chat)",
         "locationLabel": "Current Location",
-        "locationValue": "Sana'a, Yemen (Open to Remote & Relocation)"
+        "locationValue": "Sana'a, Yemen (Open to Remote & Relocation)",
+        "waBtn": "Chat Directly on WhatsApp"
     },
     "form": {
         "name": "Full Name",

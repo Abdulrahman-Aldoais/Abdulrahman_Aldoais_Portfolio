@@ -113,7 +113,7 @@ body {
 /* Compact & Sleek Navbar CV Button */
 .nav-cv-btn {
     background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.25); color: var(--accent-blue);
-    padding: 6px 14px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); white-space: nowrap;
+    padding: 6px 14px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); white-space: nowrap; cursor: pointer;
 }
 .nav-cv-btn:hover { background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
 
@@ -135,9 +135,41 @@ body {
 .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 24px; font-weight: 600; font-size: 0.92rem; text-decoration: none; cursor: pointer; transition: var(--transition); border: none; }
 .btn-primary { background: linear-gradient(135deg, #1e40af, #2563eb); color: #fff; box-shadow: 0 4px 18px rgba(37, 99, 235, 0.3); }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(37, 99, 235, 0.45); }
+.btn-whatsapp { background: linear-gradient(135deg, #16a34a, #25d366); color: #fff; box-shadow: 0 4px 18px rgba(37, 211, 102, 0.3); }
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45); color: #fff; }
 .btn-secondary { background: rgba(255, 255, 255, 0.06); color: var(--text-main); border: 1px solid var(--border-color); }
 [data-theme="light"] .btn-secondary { background: rgba(15, 23, 42, 0.04); }
 .btn-secondary:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-2px); }
+
+/* Floating WhatsApp Quick Action Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #25d366;
+    color: #ffffff !important;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+    z-index: 999;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+[dir="rtl"] .whatsapp-float {
+    right: auto;
+    left: 28px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-4px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65);
+}
 
 /* Hero Section */
 .hero { padding: 160px 0 100px; position: relative; }
@@ -272,8 +304,9 @@ body {
 .contact-info h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 16px; }
 .contact-info p { color: var(--text-muted); margin-bottom: 32px; }
 .contact-list { display: flex; flex-direction: column; gap: 20px; }
-.contact-item { display: flex; align-items: center; gap: 16px; }
-.contact-icon { width: 44px; height: 44px; background: rgba(37, 99, 235, 0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-blue); font-size: 1.1rem; }
+.contact-item { display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: var(--transition); }
+a.contact-item:hover .contact-icon { background: var(--accent-blue); color: #fff; transform: scale(1.08); }
+.contact-icon { width: 44px; height: 44px; background: rgba(37, 99, 235, 0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-blue); font-size: 1.1rem; transition: var(--transition); }
 .contact-details p { font-size: 0.8rem; color: var(--text-dim); }
 .contact-details h5 { font-size: 0.95rem; color: var(--text-main); font-weight: 600; }
 
