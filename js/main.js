@@ -1,10 +1,10 @@
 /* 
    Abdulrahman Ali Aldoais - Enterprise Portfolio JavaScript Engine
-   Features: Full i18n Translation Engine (AR/EN), Dynamic JSON Posts & Fields Translation, Dark/Light Theme, High-Visibility Gallery Toolbar
+   Features: Full i18n Translation Engine (AR/EN), Dynamic JSON Posts & Fields Translation, Bilingual Architecture Viewer, Dark/Light Theme, High-Visibility Gallery Toolbar
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Dictionary Data (Loaded directly for instant execution & file fallback)
+    // Dictionary Data
     const i18nData = {
         ar: {
             nav: { about: "نبذة عني", achievements: "الإنجازات التقنية", architecture: "معمارية النظام", skills: "المهارات", experience: "الخبرات", contactBtn: "تواصل معي" },
@@ -339,9 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Apply saved or default language on load
-    applyTranslations(currentLang);
-
     // Filter Buttons
     const filterBtns = document.querySelectorAll('.tab-btn');
     const cards = document.querySelectorAll('.achievement-card');
@@ -362,39 +359,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Architecture Multi-Image Diagram Switcher
+    // Architecture Multi-Image Diagram Switcher with Full Bilingual Support
     const archData = {
         workflow: {
             images: [
                 'assets/images/02-workflow-engine/image1.jpg',
                 'assets/images/02-workflow-engine/image2.jpg'
             ],
-            title: 'Dynamic Workflow Execution Engine Diagram',
-            desc: 'مخطط معماري يوضح كيفية استقبال الطلب، تقييم الشروط الديناميكية في الـ Runtime، توجيه المهمة للموافق المناسب، التذكير الفوري، والتأثير النهائي على الكيان.'
+            arTitle: 'Dynamic Workflow Execution Engine Diagram',
+            arDesc: 'مخطط معماري يوضح كيفية استقبال الطلب، تقييم الشروط الديناميكية في الـ Runtime، توجيه المهمة للموافق المناسب، التذكير الفوري، والتأثير النهائي على الكيان.',
+            enTitle: 'Dynamic Workflow Execution Engine Architecture Diagram',
+            enDesc: 'Architectural diagram illustrating request intake, runtime dynamic condition evaluation, task routing to designated approver, real-time reminders, and final entity state mutation.'
         },
         payroll: {
             images: [
                 'assets/images/06-payroll-bulk/image1.jpg',
                 'assets/images/06-payroll-bulk/image2.jpg'
             ],
-            title: 'Financial Payroll & Bulk Assignment Pipeline',
-            desc: 'دياجرام تدفق البيانات المعقدة لمسيرات الرواتب، سحب البدلات، الاستقطاعات المباشرة، وقفل الحسابات المالية وتصدير ملفات البنوك.'
+            arTitle: 'Financial Payroll & Bulk Assignment Pipeline',
+            arDesc: 'دياجرام تدفق البيانات المعقدة لمسيرات الرواتب، سحب البدلات، الاستقطاعات المباشرة، وقفل الحسابات المالية وتصدير ملفات البنوك.',
+            enTitle: 'Financial Payroll & Bulk Assignment Pipeline Diagram',
+            enDesc: 'Complex data flow diagram for payroll processing runs, allowance calculations, automated loan deductions, historical locks, and banking SIF exports.'
         },
         biometrics: {
             images: [
                 'assets/images/04-attendance-shift/image1.jpg',
                 'assets/images/04-attendance-shift/image2.jpg'
             ],
-            title: 'Biometrics Log Processing & Overnight Shift Mapping',
-            desc: 'خوارزميات تنقية بيانات أجهزة البصمة الحيوية وربط الحركات بالورديات المتداخلة عبر منتصف الليل (Overnight Shifts).'
+            arTitle: 'Biometrics Log Processing & Overnight Shift Mapping',
+            arDesc: 'خوارزميات تنقية بيانات أجهزة البصمة الحيوية وربط الحركات بالورديات المتداخلة عبر منتصف الليل (Overnight Shifts).',
+            enTitle: 'Biometrics Log Processing & Overnight Shift Mapping Diagram',
+            enDesc: 'Biometric punch filtering algorithms, deduplication engine, and dynamic shift mapping for cross-midnight overnight schedules.'
         },
         hero: {
             images: [
                 'assets/images/01-saas-timezone/image1.jpg',
                 'assets/images/01-saas-timezone/image2.jpg'
             ],
-            title: 'SaaS Multi-Tenant Enterprise Microservices Core',
-            desc: 'المعمارية الشاملة للمنصة، عزل بيانات المستأجرين، بروتوكول gRPC للربط بين الخدمات، وتوحيد معالجة التوقيع الزمني UTC.'
+            arTitle: 'SaaS Multi-Tenant Enterprise Microservices Core',
+            arDesc: 'المعمارية الشاملة للمنصة، عزل بيانات المستأجرين، بروتوكول gRPC للربط بين الخدمات، وتوحيد معالجة التوقيع الزمني UTC.',
+            enTitle: 'SaaS Multi-Tenant Enterprise Microservices Core Diagram',
+            enDesc: 'Overall system microservices architecture, multi-tenant data isolation layers, high-speed gRPC communications, and UTC timezone standardization.'
         }
     };
 
@@ -429,8 +434,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const dict = i18nData[currentLang];
         if (data) {
             document.getElementById('archImg').src = data.images[currentArchImageIndex];
-            document.getElementById('archTitle').textContent = data.title;
-            document.getElementById('archDesc').textContent = data.desc;
+            document.getElementById('archTitle').textContent = currentLang === 'ar' ? data.arTitle : data.enTitle;
+            document.getElementById('archDesc').textContent = currentLang === 'ar' ? data.arDesc : data.enDesc;
             
             const counterEl = document.getElementById('archCounter');
             if (counterEl) {
@@ -526,4 +531,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
+    // Apply saved language initial setup
+    applyTranslations(currentLang);
 });
