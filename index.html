@@ -29,7 +29,6 @@
                 <li><a href="#about" class="active" data-i18n="nav.about">نبذة عني</a></li>
                 <li><a href="#achievements" data-i18n="nav.achievements">الإنجازات التقنية</a></li>
                 <li><a href="#architecture" data-i18n="nav.architecture">معمارية النظام</a></li>
-                <li><a href="#code" data-i18n="nav.code">الكود النظيف</a></li>
                 <li><a href="#stack" data-i18n="nav.stack">البيئة والتقنيات</a></li>
                 <li><a href="#skills" data-i18n="nav.skills">المهارات</a></li>
                 <li><a href="#experience" data-i18n="nav.experience">الخبرات</a></li>
@@ -355,58 +354,6 @@
                         <h3 id="archTitle">Dynamic Workflow Execution Engine Diagram</h3>
                         <p id="archDesc">مخطط معماري يوضح كيفية استقبال الطلب، تقييم الشروط الديناميكية في الـ Runtime، توجيه المهمة للموافق المناسب، التذكير الفوري، والتأثير النهائي على الكيان.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clean Code Showcase Section -->
-    <section class="code-section" id="code">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="codeShowcase.tag">معايير الجودة البرمجية</span>
-                <h2 class="section-title" data-i18n="codeShowcase.title">عينات الكود النظيف والمعمارية (Clean Code Showcase)</h2>
-                <p class="section-desc" data-i18n="codeShowcase.desc">نماذج حقيقية من الخوارزميات والمعماريات البرمجية المكتوبة بلغة C# للأنظمة المؤسسية</p>
-            </div>
-
-            <div class="code-container">
-                <div class="code-header-bar">
-                    <div class="code-tabs-list">
-                        <button class="code-tab-btn active" onclick="switchCodeTab('utc', this)" data-i18n="codeShowcase.tab1">EF Core UTC Converter</button>
-                        <button class="code-tab-btn" onclick="switchCodeTab('rule', this)" data-i18n="codeShowcase.tab2">Workflow Rule Evaluator</button>
-                        <button class="code-tab-btn" onclick="switchCodeTab('overnight', this)" data-i18n="codeShowcase.tab3">Overnight Shift Mapper</button>
-                    </div>
-                    <button class="copy-code-btn" onclick="copyCodeSnippet()">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                        <span id="copyBtnText" data-i18n="codeShowcase.copyBtn">نسخ الكود</span>
-                    </button>
-                </div>
-                <div class="code-snippet-box">
-                    <pre><code id="codeText">// Enterprise EF Core UTC DateTime Converter Framework
-public class UtcDateTimeConverter : ValueConverter<DateTime, DateTime>
-{
-    public UtcDateTimeConverter() : base(
-        v => v.Kind == DateTimeKind.Utc ? v : v.ToUniversalTime(),
-        v => DateTime.SpecifyKind(v, DateTimeKind.Utc))
-    { }
-}
-
-// Global EF Core ModelBuilder Registration
-protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-    base.OnModelCreating(modelBuilder);
-
-    foreach (var entityType in modelBuilder.Model.GetEntityTypes())
-    {
-        foreach (var property in entityType.GetProperties())
-        {
-            if (property.ClrType == typeof(DateTime) || property.ClrType == typeof(DateTime?))
-            {
-                property.SetValueConverter(typeof(UtcDateTimeConverter));
-            }
-        }
-    }
-}</code></pre>
                 </div>
             </div>
         </div>
