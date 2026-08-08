@@ -32,7 +32,6 @@
                 <li><a href="#stack" data-i18n="nav.stack">البيئة والتقنيات</a></li>
                 <li><a href="#skills" data-i18n="nav.skills">المهارات</a></li>
                 <li><a href="#experience" data-i18n="nav.experience">الخبرات</a></li>
-                <li><a href="#faq" data-i18n="nav.faq">الأسئلة المعمارية</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="nav-cv-btn" onclick="openCvModal()" title="View & Download CV">
@@ -462,51 +461,6 @@
                         <h4 data-i18n="certifications.cert4">High-Performance EF Core & SQL Server Pipeline</h4>
                         <p data-i18n="certifications.cert4Org">Data Architecture Standard</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architectural FAQ for CTOs & Recruiters -->
-    <section class="faq-section" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="faq.tag">الاستفسارات المعمارية لمدراء التقنية</span>
-                <h2 class="section-title" data-i18n="faq.title">الأسئلة الأكثر شيوعاً في معمارية الأنظمة (FAQ)</h2>
-                <p class="section-desc" data-i18n="faq.desc">إجابات تقنية مباشرة توضح النهج الهندسي المتبع في حل التحديات المعقدة</p>
-            </div>
-
-            <div class="faq-grid">
-                <div class="faq-card">
-                    <h3 class="faq-question">
-                        <span class="faq-question-icon">Q1.</span>
-                        <span data-i18n="faq.q1">كيف تضمن الفصل التام لبيانات العملاء في نظام Multi-Tenant SaaS؟</span>
-                    </h3>
-                    <p class="faq-answer" data-i18n="faq.a1">أطبق استراتيجية عزل البيانات المباشرة على مستوى قاعدة البيانات باستخدام Tenant ID Middleware متبوعاً بقواعد تصفية تلقائية في EF Core Global Query Filters لضمان عدم تسرب أو تداخل أي بيانات بين الشركات.</p>
-                </div>
-
-                <div class="faq-card">
-                    <h3 class="faq-question">
-                        <span class="faq-question-icon">Q2.</span>
-                        <span data-i18n="faq.q2">كيف تعالج مشكلة الفارق الزمني بين سيرفر الاستضافة والمستخدمين في دول مختلفة؟</span>
-                    </h3>
-                    <p class="faq-answer" data-i18n="faq.a2">نظام موحد يعتمد على تخزين جميع البيانات في قاعدة البيانات بـ UTC بشكل دائم، مع استخدام محولات قيم ValueConverters في EF Core، وتطبيق توقيت المستأجر آلياً قبل إجراء أي حسابات لورديات العمل أو البصمة.</p>
-                </div>
-
-                <div class="faq-card">
-                    <h3 class="faq-question">
-                        <span class="faq-question-icon">Q3.</span>
-                        <span data-i18n="faq.q3">كيف يقضي محرك سير العمل الديناميكي على المسارات المبرمجة ثابتاً (Hardcoded)؟</span>
-                    </h3>
-                    <p class="faq-answer" data-i18n="faq.a3">عبر تقييم الشروط (القيم المالية، الأيام، المودويل) في الـ Runtime باستخدام Runtime Rules Evaluator، مما يتيح للمشرفين تعديل أو إضافة مسارات موافقات معقدة من لوحة التحكم دون الحاجة لكتابة كود جديد.</p>
-                </div>
-
-                <div class="faq-card">
-                    <h3 class="faq-question">
-                        <span class="faq-question-icon">Q4.</span>
-                        <span data-i18n="faq.q4">ما هي مدى جاهزية محرك الرواتب ومكافأة نهاية الخدمة لنظام العمل السعودي؟</span>
-                    </h3>
-                    <p class="faq-answer" data-i18n="faq.a4">المحرك مصمم ومطور بمرونة تامة للالتزام ببنود لائحة العمل السعودية، بما يشمل حسابات نهاية الخدمة (EOSB) حسب سنوات الخدمة وسبب الانتهاء، وتوليد ملفات البنوك بنظام SIF وتجميد المسيرات تاريخياً.</p>
                 </div>
             </div>
         </div>
