@@ -1,6 +1,6 @@
 /* 
    Abdulrahman Ali Aldoais - Enterprise Portfolio JavaScript Engine
-   Features: Full i18n Translation Engine (AR/EN), Dynamic CV Viewer Modal, Dark/Light Theme, High-Visibility Gallery Toolbar
+   Features: Full i18n Translation Engine (AR/EN), Direct WhatsApp Launcher, Dynamic CV Viewer Modal, Dark/Light Theme, High-Visibility Gallery Toolbar
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     content: "<p>تتبع التاريخ المالي للعقود بشكل غير قابل للتعديل العكسي مع أتمتة حسابات مكافأة نهاية الخدمة والتسويات المالية وفق نظام العمل.</p><br><h4>المميزات التقنية:</h4><ul><li><b>Immutable Versioning:</b> إنشاء إصدار جديد للعقد عند كل تعديل مالي دون حذف النسخ السابقة.</li><li><b>EOSB Settlement Engine:</b> حساب الاستحقاق آلياً حسب سنوات الخدمة وسبب إنهاء العلاقة التعاقدية.</li></ul>"
                 },
                 modal6: {
-                    title: "محرك الرواتب والعمليات المالية الجماعية (Financial Payroll & Bulk Processing Pipeline)",
+                    title: "محرك الرواتب والعمليات المالية الجماعية (Financial Payroll & Bulk Processing Architecture)",
                     content: "<p>محرك المعالجة الجماعية للرواتب، البدلات، والأقساط لآلاف الموظفين في ثوانٍ معدودة مع دعم القفل التاريخي للمسيرات والتصدير البنكي المعتمد.</p><br><h4>المميزات التقنية:</h4><ul><li><b>Bulk Assignment Pipeline:</b> تخصيص البدلات والاستقطاعات لآلاف الموظفين دفعة واحدة.</li><li><b>Automated Deduction Linkage:</b> سحب السلف والمخالفات المعتمدة آلياً وإدراجها بالمسيرة.</li><li><b>Payroll Locking & SIF Export:</b> قفل الحسابات تاريخياً وتصدير ملفات البنوك بنظام SIF.</li></ul>"
                 }
             },
@@ -97,9 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: "تواصل معي لبناء وتطوير الأنظمة",
                 desc: "أنا متاح للفرص الوظيفية في السوق الخليجي (السعودية والإمارات)، والعمل عن بُعد (Remote)، والاستشارات المعمارية.",
                 emailLabel: "البريد الإلكتروني",
-                phoneLabel: "الهاتف / الواتساب",
+                phoneLabel: "الهاتف / الواتساب (انقر للمحادثات المباشرة)",
                 locationLabel: "الموقع الحالي",
-                locationValue: "صنعاء، اليمن (متاح للانتقال والعمل عن بُعد)"
+                locationValue: "صنعاء، اليمن (متاح للانتقال والعمل عن بُعد)",
+                waBtn: "مراسلة عبر الواتساب مباشرة"
             },
             form: {
                 name: "الاسم الكريم",
@@ -203,9 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: "Let’s Build Scalable Systems Together",
                 desc: "Open for remote opportunities, Gulf market positions (Saudi Arabia & UAE), and architectural consulting.",
                 emailLabel: "Email Address",
-                phoneLabel: "Phone / WhatsApp",
+                phoneLabel: "Phone / WhatsApp (Click to chat directly)",
                 locationLabel: "Current Location",
-                locationValue: "Sana'a, Yemen (Open to Remote & Relocation)"
+                locationValue: "Sana'a, Yemen (Open to Remote & Relocation)",
+                waBtn: "Chat Directly on WhatsApp"
             },
             form: {
                 name: "Full Name",
@@ -223,6 +225,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLang = localStorage.getItem('lang') || 'ar';
     const langToggle = document.getElementById('langToggle');
     const langText = document.getElementById('langText');
+
+    // Direct WhatsApp Opener Engine
+    window.openWhatsApp = function(e) {
+        if (e) e.preventDefault();
+        const textAr = encodeURIComponent('السلام عليكم مهندس عبدالرحمن، أتواصل معك بخصوص فرصة عمل / استشارة تقنية.');
+        const textEn = encodeURIComponent('Hello Eng. Abdulrahman, I am reaching out to discuss a software opportunity / architectural consultation.');
+        const msg = currentLang === 'ar' ? textAr : textEn;
+        window.open(`https://api.whatsapp.com/send?phone=967775115810&text=${msg}`, '_blank');
+    };
 
     // Theme Switcher Logic (Dark / Light Mode)
     const themeToggleBtn = document.getElementById('themeToggle');
