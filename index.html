@@ -54,7 +54,7 @@
                 </div>
                 <h1 class="hero-title">
                     <span data-i18n="hero.greeting">أهلاً بك، أنا</span> <br>
-                    <span class="gradient-text">عبدالرحمن علي الدعيس</span>
+                    <span class="gradient-text" data-i18n="hero.name">عبدالرحمن علي الدعيس</span>
                 </h1>
                 <div class="hero-subtitle">
                     <span data-i18n="hero.rolePrefix">متخصص في:</span>
@@ -116,15 +116,15 @@
             <div class="section-header">
                 <span class="section-tag" data-i18n="achieve.tag">الإنجازات والأنظمة</span>
                 <h2 class="section-title" data-i18n="achieve.title">سلسلة الإنجازات المعمارية في FALAK HR</h2>
-                <p class="section-desc" data-i18n="achieve.desc">أنظمة وموديولات محورية تم تصميمهما وتطويرها لحل أعقد التحديات في المنصات المؤسسية</p>
+                <p class="section-desc" data-i18n="achieve.desc">أنظمة وموديولات محورية تم تصميمها وتطويرها لحل أعقد التحديات في المنصات المؤسسية</p>
             </div>
 
             <div class="filter-tabs">
-                <button class="tab-btn active" data-filter="all" data-i18n="tab.all">الكل</button>
-                <button class="tab-btn" data-filter="saas" data-i18n="tab.saas">Multi-Tenant & UTC</button>
-                <button class="tab-btn" data-filter="workflow" data-i18n="tab.workflow">Workflow Engine</button>
-                <button class="tab-btn" data-filter="payroll" data-i18n="tab.payroll">Payroll & Finance</button>
-                <button class="tab-btn" data-filter="attendance" data-i18n="tab.attendance">Attendance & Shift</button>
+                <button class="tab-btn active" data-filter="all" data-i18n="tabs.all">الكل</button>
+                <button class="tab-btn" data-filter="saas" data-i18n="tabs.saas">Multi-Tenant & UTC</button>
+                <button class="tab-btn" data-filter="workflow" data-i18n="tabs.workflow">Workflow Engine</button>
+                <button class="tab-btn" data-filter="payroll" data-i18n="tabs.payroll">Payroll & Finance</button>
+                <button class="tab-btn" data-filter="attendance" data-i18n="tabs.attendance">Attendance & Shift</button>
             </div>
 
             <div class="achievements-grid">
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <a class="card-link" onclick="openModal(1)">
-                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <span data-i18n="cards.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                     <a class="card-link" onclick="openModal(2)">
-                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <span data-i18n="cards.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
@@ -186,7 +186,7 @@
                         </div>
                     </div>
                     <a class="card-link" onclick="openModal(3)">
-                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <span data-i18n="cards.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                     <a class="card-link" onclick="openModal(4)">
-                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <span data-i18n="cards.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
@@ -228,7 +228,7 @@
                         </div>
                     </div>
                     <a class="card-link" onclick="openModal(5)">
-                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <span data-i18n="cards.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
@@ -249,7 +249,7 @@
                         </div>
                     </div>
                     <a class="card-link" onclick="openModal(6)">
-                        <span data-i18n="card.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
+                        <span data-i18n="cards.btnDetails">معاينة الصور والتفاصيل المعمارية</span>
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                 </div>
@@ -303,9 +303,9 @@
 
                     <!-- Interactive Control Toolbar for Architecture Viewer -->
                     <div class="gallery-toolbar" style="margin-bottom: 18px;">
-                        <button class="gallery-btn" onclick="prevArchSlide()">◀ الصورة السابقة</button>
+                        <button class="gallery-btn" onclick="prevArchSlide()" data-i18n="modals.prevBtn">◀ الصورة السابقة</button>
                         <div class="gallery-status-badge" id="archCounter">صورة 1 من 2</div>
-                        <button class="gallery-btn" onclick="nextArchSlide()">الصورة التالية ▶</button>
+                        <button class="gallery-btn" onclick="nextArchSlide()" data-i18n="modals.nextBtn">الصورة التالية ▶</button>
                     </div>
 
                     <div class="arch-info">
@@ -329,7 +329,7 @@
                 <div class="skill-category">
                     <div class="category-header">
                         <i class="fa-solid fa-code"></i>
-                        <h3 data-i18n="skill.cat1">Backend & Frameworks</h3>
+                        <h3 data-i18n="skills.cat1">Backend & Frameworks</h3>
                     </div>
                     <div class="skill-list">
                         <div class="skill-item">
@@ -359,7 +359,7 @@
                 <div class="skill-category">
                     <div class="category-header">
                         <i class="fa-solid fa-database"></i>
-                        <h3 data-i18n="skill.cat2">Database & Architecture</h3>
+                        <h3 data-i18n="skills.cat2">Database & Architecture</h3>
                     </div>
                     <div class="skill-list">
                         <div class="skill-item">
@@ -389,7 +389,7 @@
                 <div class="skill-category">
                     <div class="category-header">
                         <i class="fa-solid fa-gears"></i>
-                        <h3 data-i18n="skill.cat3">Domain & Enterprise</h3>
+                        <h3 data-i18n="skills.cat3">Domain & Enterprise</h3>
                     </div>
                     <div class="skill-list">
                         <div class="skill-item">
@@ -433,15 +433,15 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-role">Software Engineer — System Analysis & Backend Focus</h3>
-                                <div class="timeline-company">Al-Falak Soft (Saudi Arabia) | Sana'a, Yemen</div>
+                                <h3 class="timeline-role" data-i18n="exp.job1Role">Software Engineer — System Analysis & Backend Focus</h3>
+                                <div class="timeline-company" data-i18n="exp.job1Company">Al-Falak Soft (Saudi Arabia) | Sana'a, Yemen</div>
                             </div>
-                            <span class="timeline-date">March 2025 – Present</span>
+                            <span class="timeline-date" data-i18n="exp.job1Date">March 2025 – Present</span>
                         </div>
                         <ul class="timeline-bullets">
-                            <li>قيادة مرحلة التحليل الهندسي وبناء الأنظمة لمنصة HRMS متعددة المستأجرين من الصفر.</li>
-                            <li>تصميم وبناء محرك سير العمل الديناميكي (Dynamic Workflow Engine) وإدارة المهام والتصعيد التلقائي.</li>
-                            <li>تهيئة Keycloak لإدارة الهويات والوصول الموحد (SSO) وتوزيع الصلاحيات (RBAC) عبر موديولات النظام.</li>
+                            <li data-i18n="exp.job1b1">قيادة مرحلة التحليل الهندسي وبناء الأنظمة لمنصة HRMS متعددة المستأجرين من الصفر.</li>
+                            <li data-i18n="exp.job1b2">تصميم وبناء محرك سير العمل الديناميكي (Dynamic Workflow Engine) وإدارة المهام والتصعيد التلقائي.</li>
+                            <li data-i18n="exp.job1b3">تهيئة Keycloak لإدارة الهويات والوصول الموحد (SSO) وتوزيع الصلاحيات (RBAC) عبر موديولات النظام.</li>
                         </ul>
                     </div>
                 </div>
@@ -451,15 +451,15 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-role">Software Engineer — Backend Specialist</h3>
-                                <div class="timeline-company">Data Trans Company (Contracted for Obeikan Digital Solutions, KSA)</div>
+                                <h3 class="timeline-role" data-i18n="exp.job2Role">Software Engineer — Backend Specialist</h3>
+                                <div class="timeline-company" data-i18n="exp.job2Company">Data Trans Company (Contracted for Obeikan Digital Solutions, KSA)</div>
                             </div>
-                            <span class="timeline-date">March 2024 – March 2025</span>
+                            <span class="timeline-date" data-i18n="exp.job2Date">March 2024 – March 2025</span>
                         </div>
                         <ul class="timeline-bullets">
-                            <li>تطوير خدمات الـ Backend والموديولات الأساسية لمنصة HRMS المعتمدة في السوق السعودي.</li>
-                            <li>تصميم معماريات الـ Microservices ونظام الاتصال المتبادل عالي الأداء باستخدام gRPC.</li>
-                            <li>تطوير وبناء RESTful APIs متقدمة وتكامل البيانات باستخدام SQL Server و Entity Framework Core.</li>
+                            <li data-i18n="exp.job2b1">تطوير خدمات الـ Backend والموديولات الأساسية لمنصة HRMS المعتمدة في السوق السعودي.</li>
+                            <li data-i18n="exp.job2b2">تصميم معماريات الـ Microservices ونظام الاتصال المتبادل عالي الأداء باستخدام gRPC.</li>
+                            <li data-i18n="exp.job2b3">تطوير وبناء RESTful APIs متقدمة وتكامل البيانات باستخدام SQL Server و Entity Framework Core.</li>
                         </ul>
                     </div>
                 </div>
@@ -469,14 +469,14 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-role">Volunteer Full-Stack Developer</h3>
-                                <div class="timeline-company">RYCAAD Organization (Yemeni Farmers Cooperative Association)</div>
+                                <h3 class="timeline-role" data-i18n="exp.job3Role">Volunteer Full-Stack Developer</h3>
+                                <div class="timeline-company" data-i18n="exp.job3Company">RYCAAD Organization (Yemeni Farmers Cooperative Association)</div>
                             </div>
-                            <span class="timeline-date">January 2022 – January 2024</span>
+                            <span class="timeline-date" data-i18n="exp.job3Date">January 2022 – January 2024</span>
                         </div>
                         <ul class="timeline-bullets">
-                            <li>التطوع لبناء المنصة الرقمية الخيرية لملتقى المزارعين في اليمن باستخدام ASP.NET Core MVC و HTML/CSS.</li>
-                            <li>تطوير خدمات إدارة المحتوى، العضوية، الحجوزات الفورية للمنعقدات، ونظام التنبيهات الآلية.</li>
+                            <li data-i18n="exp.job3b1">التطوع لبناء المنصة الرقمية الخيرية لملتقى المزارعين في اليمن باستخدام ASP.NET Core MVC و HTML/CSS.</li>
+                            <li data-i18n="exp.job3b2">تطوير خدمات إدارة المحتوى، العضوية، الحجوزات الفورية للمنعقدات، ونظام التنبيهات الآلية.</li>
                         </ul>
                     </div>
                 </div>
@@ -496,22 +496,22 @@
                         <div class="contact-item">
                             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                             <div class="contact-details">
-                                <p>البريد الإلكتروني</p>
+                                <p data-i18n="contact.emailLabel">البريد الإلكتروني</p>
                                 <h5>abdulrahmanaldoais@gmail.com</h5>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                             <div class="contact-details">
-                                <p>الهاتف / الواتساب</p>
+                                <p data-i18n="contact.phoneLabel">الهاتف / الواتساب</p>
                                 <h5>+967 775 115 810</h5>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
                             <div class="contact-details">
-                                <p>الموقع الحالي</p>
-                                <h5>صنعاء، اليمن (متاح للانتقال والعمل عن بُعد)</h5>
+                                <p data-i18n="contact.locationLabel">الموقع الحالي</p>
+                                <h5 data-i18n="contact.locationValue">صنعاء، اليمن (متاح للانتقال والعمل عن بُعد)</h5>
                             </div>
                         </div>
                     </div>
@@ -520,15 +520,15 @@
                 <div class="contact-form">
                     <div class="form-group">
                         <label data-i18n="form.name">الاسم الكريم</label>
-                        <input type="text" class="form-control" placeholder="أدخل اسمك هنا...">
+                        <input type="text" class="form-control" data-i18n-placeholder="form.namePlaceholder" placeholder="أدخل اسمك هنا...">
                     </div>
                     <div class="form-group">
                         <label data-i18n="form.email">البريد الإلكتروني</label>
-                        <input type="email" class="form-control" placeholder="name@company.com">
+                        <input type="email" class="form-control" data-i18n-placeholder="form.emailPlaceholder" placeholder="name@company.com">
                     </div>
                     <div class="form-group">
                         <label data-i18n="form.message">رسالتك / تفاصيل الفرصة</label>
-                        <textarea class="form-control" placeholder="اكتب رسالتك هنا..."></textarea>
+                        <textarea class="form-control" data-i18n-placeholder="form.msgPlaceholder" placeholder="اكتب رسالتك هنا..."></textarea>
                     </div>
                     <button class="btn btn-primary" onclick="alert('شكراً لتواصلك! تم استلام رسالتك بنجاح.')">
                         <i class="fa-solid fa-paper-plane"></i>
@@ -542,7 +542,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Abdulrahman Ali Aldoais. All rights reserved. Built with Clean Architecture.</p>
+            <p data-i18n="footer">© 2026 Abdulrahman Ali Aldoais. All rights reserved. Built with Clean Architecture.</p>
         </div>
     </footer>
 
@@ -551,7 +551,7 @@
         <div class="modal-container">
             <div class="modal-header-top">
                 <h3 class="modal-title" id="modalTitle">عنوان الإنجاز</h3>
-                <button class="modal-close-btn" onclick="closeModal()">✕ إغلاق</button>
+                <button class="modal-close-btn" onclick="closeModal()" data-i18n="modals.closeBtn">✕ إغلاق</button>
             </div>
             <div class="modal-body" id="modalBody"></div>
         </div>

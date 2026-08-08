@@ -111,16 +111,41 @@
     },
     "exp": {
         "tag": "CAREER TIMELINE",
-        "title": "Engineering Leadership & Experience"
+        "title": "Engineering Leadership & Experience",
+        "job1Role": "Software Engineer — System Analysis & Backend Focus",
+        "job1Company": "Al-Falak Soft (Saudi Arabia) | Sana'a, Yemen",
+        "job1Date": "March 2025 – Present",
+        "job1b1": "Lead system analysis and architectural design for a multi-tenant HRMS platform built from scratch.",
+        "job1b2": "Engineered the dynamic workflow execution engine, task delegation, and SLA auto-escalation.",
+        "job1b3": "Configured Keycloak for SSO, identity management, and fine-grained RBAC authorization.",
+        "job2Role": "Software Engineer — Backend Specialist",
+        "job2Company": "Data Trans Company (Contracted for Obeikan Digital Solutions, KSA)",
+        "job2Date": "March 2024 – March 2025",
+        "job2b1": "Developed core backend microservices for enterprise HRMS platform deployed in KSA market.",
+        "job2b2": "Architected high-performance inter-service gRPC communication protocols.",
+        "job2b3": "Built RESTful Web APIs and optimized SQL Server / EF Core data pipelines.",
+        "job3Role": "Volunteer Full-Stack Developer",
+        "job3Company": "RYCAAD Organization (Yemeni Farmers Cooperative Association)",
+        "job3Date": "January 2022 – January 2024",
+        "job3b1": "Volunteered to build the RYCAAD non-profit platform using ASP.NET Core MVC, HTML, and CSS.",
+        "job3b2": "Developed CMS services, membership management, hall booking, and automated notification system."
     },
     "contact": {
         "title": "Let’s Build Scalable Systems Together",
-        "desc": "Open for remote opportunities, Gulf market positions (Saudi Arabia & UAE), and architectural consulting."
+        "desc": "Open for remote opportunities, Gulf market positions (Saudi Arabia & UAE), and architectural consulting.",
+        "emailLabel": "Email Address",
+        "phoneLabel": "Phone / WhatsApp",
+        "locationLabel": "Current Location",
+        "locationValue": "Sana'a, Yemen (Open to Remote & Relocation)"
     },
     "form": {
         "name": "Full Name",
+        "namePlaceholder": "Enter your full name...",
         "email": "Email Address",
-        "message": "Your Message / Opportunity Details",
+        "emailPlaceholder": "name@company.com",
+        "message": "Message / Opportunity Details",
+        "msgPlaceholder": "Write your message here...",
         "btnSend": "Send Message"
-    }
+    },
+    "footer": "© 2026 Abdulrahman Ali Aldoais. All rights reserved. Built with Clean Architecture."
 }

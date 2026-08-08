@@ -1,6 +1,6 @@
 /* 
    Abdulrahman Ali Aldoais - Enterprise Portfolio JavaScript Engine
-   Features: Full i18n Translation Engine (AR/EN), Dynamic JSON Posts Translation, Dark/Light Theme, High-Visibility Gallery Toolbar
+   Features: Full i18n Translation Engine (AR/EN), Dynamic JSON Posts & Fields Translation, Dark/Light Theme, High-Visibility Gallery Toolbar
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnExplore: "استكشف الإنجازات المعمارية",
                 stat1: "مستخدم في السوق السعودي",
                 stat2: "توافق زمن UTC العالمي",
-                stat3: "مسارات موافقات ثابته",
+                stat3: "مسارات موافقات مبرمجة ثابته",
                 badge1Sub: "Multi-Tenant SaaS",
                 badge1Title: "Tenant Isolation & UTC",
                 badge2Sub: "Dynamic Workflow",
@@ -67,9 +67,44 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             arch: { tag: "مخططات الأنظمة المباشرة", title: "استعراض دياجرام المعمارية والتصميم الهيكلي", desc: "اختر النظام من القائمة الجانبية وتصفح الصور والدياجرامات المعمارية الخاصة به بالأزرار التالية", selectModule: "اختر النظام المعماري:", item1: "Workflow Execution Engine", item2: "Payroll & Bulk Pipeline", item3: "Biometrics & Overnight Shift", item4: "SaaS Microservices Core" },
             skills: { tag: "المهارات التقنية", title: "مصفوفة الخبرات والمعمارية التقنية", cat1: "Backend & Frameworks", cat2: "Database & Architecture", cat3: "Domain & Enterprise" },
-            exp: { tag: "المسيرة المهنية", title: "الخبرات والمشاريع القيادية" },
-            contact: { title: "تواصل معي لبناء وتطوير الأنظمة", desc: "أنا متاح للفرص الوظيفية في السوق الخليجي (السعودية والإمارات)، والعمل عن بُعد (Remote)، والاستشارات المعمارية." },
-            form: { name: "الاسم الكريم", email: "البريد الإلكتروني", message: "رسالتك / تفاصيل الفرصة", btnSend: "إرسال الرسالة" }
+            exp: {
+                tag: "المسيرة المهنية", title: "الخبرات والمشاريع القيادية",
+                job1Role: "مهندس أنظمة وحلول برمجية (Backend Specialist)",
+                job1Company: "شركة الفلك لتقنية المعلومات (Al-Falak Soft) | صنعاء، اليمن",
+                job1Date: "مارس 2025 – الحاضر",
+                job1b1: "قيادة مرحلة التحليل الهندسي وبناء الأنظمة لمنصة HRMS متعددة المستأجرين من الصفر.",
+                job1b2: "تصميم وبناء محرك سير العمل الديناميكي (Dynamic Workflow Engine) وإدارة المهام والتصعيد التلقائي.",
+                job1b3: "تهيئة Keycloak لإدارة الهويات والوصول الموحد (SSO) وتوزيع الصلاحيات (RBAC) عبر موديولات النظام.",
+                job2Role: "مطور خلفية أنظمة (Backend Specialist)",
+                job2Company: "شركة داتا ترانس (تعاقد لصالح شركة العبيكان للحلول الرقمية - السعودية)",
+                job2Date: "مارس 2024 – مارس 2025",
+                job2b1: "تطوير خدمات الـ Backend والموديولات الأساسية لمنصة HRMS المعتمدة في السوق السعودي.",
+                job2b2: "تصميم معماريات الـ Microservices ونظام الاتصال المتبادل عالي الأداء باستخدام gRPC.",
+                job2b3: "تطوير وبناء RESTful APIs متقدمة وتكامل البيانات باستخدام SQL Server و Entity Framework Core.",
+                job3Role: "مطور ويب متطوع (Volunteer Full-Stack Developer)",
+                job3Company: "منظمة ملتقى مزارعي اليمن (RYCAAD Organization)",
+                job3Date: "يناير 2022 – يناير 2024",
+                job3b1: "التطوع لبناء المنصة الرقمية الخيرية لملتقى المزارعين في اليمن باستخدام ASP.NET Core MVC و HTML/CSS.",
+                job3b2: "تطوير خدمات إدارة المحتوى، العضوية، الحجوزات الفورية للمنعقدات، ونظام التنبيهات الآلية."
+            },
+            contact: {
+                title: "تواصل معي لبناء وتطوير الأنظمة",
+                desc: "أنا متاح للفرص الوظيفية في السوق الخليجي (السعودية والإمارات)، والعمل عن بُعد (Remote)، والاستشارات المعمارية.",
+                emailLabel: "البريد الإلكتروني",
+                phoneLabel: "الهاتف / الواتساب",
+                locationLabel: "الموقع الحالي",
+                locationValue: "صنعاء، اليمن (متاح للانتقال والعمل عن بُعد)"
+            },
+            form: {
+                name: "الاسم الكريم",
+                namePlaceholder: "أدخل اسمك هنا...",
+                email: "البريد الإلكتروني",
+                emailPlaceholder: "name@company.com",
+                message: "رسالتك / تفاصيل الفرصة",
+                msgPlaceholder: "اكتب رسالتك هنا...",
+                btnSend: "إرسال الرسالة"
+            },
+            footer: "© 2026 جميع الحقوق محفوظة لـ عبدالرحمن علي الدعيس. تم التطوير بمعمارية الأنظمة النظيفة Clean Architecture."
         },
         en: {
             nav: { about: "About Me", achievements: "Achievements", architecture: "Architecture", skills: "Skills", experience: "Experience", contactBtn: "Contact Me" },
@@ -132,9 +167,44 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             arch: { tag: "LIVE ARCHITECTURE DIAGRAMS", title: "System Design & Data Flow Preview", desc: "Select a module from the sidebar and browse its visual diagrams using the control bar below", selectModule: "Select Architecture System:", item1: "Workflow Execution Engine", item2: "Payroll & Bulk Pipeline", item3: "Biometrics & Overnight Shift", item4: "SaaS Microservices Core" },
             skills: { tag: "TECHNICAL MATRIX", title: "Engineering & Architectural Competencies", cat1: "Backend & Frameworks", cat2: "Database & Architecture", cat3: "Domain & Enterprise" },
-            exp: { tag: "CAREER TIMELINE", title: "Engineering Leadership & Experience" },
-            contact: { title: "Let’s Build Scalable Systems Together", desc: "Open for remote opportunities, Gulf market positions (Saudi Arabia & UAE), and architectural consulting." },
-            form: { name: "Full Name", email: "Email Address", message: "Your Message / Opportunity Details", btnSend: "Send Message" }
+            exp: {
+                tag: "CAREER TIMELINE", title: "Engineering Leadership & Experience",
+                job1Role: "Software Engineer — System Analysis & Backend Focus",
+                job1Company: "Al-Falak Soft (Saudi Arabia) | Sana'a, Yemen",
+                job1Date: "March 2025 – Present",
+                job1b1: "Lead system analysis and architectural design for a multi-tenant HRMS platform built from scratch.",
+                job1b2: "Engineered the dynamic workflow execution engine, task delegation, and SLA auto-escalation.",
+                job1b3: "Configured Keycloak for SSO, identity management, and fine-grained RBAC authorization.",
+                job2Role: "Software Engineer — Backend Specialist",
+                job2Company: "Data Trans Company (Contracted for Obeikan Digital Solutions, KSA)",
+                job2Date: "March 2024 – March 2025",
+                job2b1: "Developed core backend microservices for enterprise HRMS platform deployed in KSA market.",
+                job2b2: "Architected high-performance inter-service gRPC communication protocols.",
+                job2b3: "Built RESTful Web APIs and optimized SQL Server / EF Core data pipelines.",
+                job3Role: "Volunteer Full-Stack Developer",
+                job3Company: "RYCAAD Organization (Yemeni Farmers Cooperative Association)",
+                job3Date: "January 2022 – January 2024",
+                job3b1: "Volunteered to build the RYCAAD non-profit platform using ASP.NET Core MVC, HTML, and CSS.",
+                job3b2: "Developed CMS services, membership management, hall booking, and automated notification system."
+            },
+            contact: {
+                title: "Let’s Build Scalable Systems Together",
+                desc: "Open for remote opportunities, Gulf market positions (Saudi Arabia & UAE), and architectural consulting.",
+                emailLabel: "Email Address",
+                phoneLabel: "Phone / WhatsApp",
+                locationLabel: "Current Location",
+                locationValue: "Sana'a, Yemen (Open to Remote & Relocation)"
+            },
+            form: {
+                name: "Full Name",
+                namePlaceholder: "Enter your full name...",
+                email: "Email Address",
+                emailPlaceholder: "name@company.com",
+                message: "Message / Opportunity Details",
+                msgPlaceholder: "Write your message here...",
+                btnSend: "Send Message"
+            },
+            footer: "© 2026 Abdulrahman Ali Aldoais. All rights reserved. Built with Clean Architecture."
         }
     };
 
@@ -220,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const dict = i18nData[lang];
 
-        // 1. General data-i18n elements
+        // 1. General data-i18n text elements
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
             const keys = key.split('.');
@@ -231,7 +301,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // 2. Translate Achievement Cards Titles & Descriptions Dynamically
+        // 2. Translate Input Placeholders (data-i18n-placeholder)
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            const keys = key.split('.');
+            let value = dict;
+            keys.forEach(k => { if (value) value = value[k]; });
+            if (value && typeof value === 'string') {
+                el.placeholder = value;
+            }
+        });
+
+        // 3. Translate Achievement Cards Titles & Descriptions Dynamically
         for (let i = 1; i <= 6; i++) {
             const cardData = dict.cards[`card${i}`];
             const cardTitleEl = document.querySelector(`.achievement-card:nth-child(${i}) .card-title`);
@@ -243,11 +324,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cardLinkEl) cardLinkEl.textContent = dict.cards.btnDetails;
         }
 
-        // 3. Update Close button text
+        // 4. Update Close button text
         const closeBtnEl = document.querySelector('.modal-close-btn');
         if (closeBtnEl) closeBtnEl.textContent = dict.modals.closeBtn;
 
         updateThemeUI(document.documentElement.getAttribute('data-theme'));
+        updateArchView();
     }
 
     if (langToggle) {
