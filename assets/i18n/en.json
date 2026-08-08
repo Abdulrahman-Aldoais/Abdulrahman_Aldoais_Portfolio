@@ -5,7 +5,8 @@
         "architecture": "Architecture",
         "skills": "Skills",
         "experience": "Experience",
-        "contactBtn": "Contact Me"
+        "contactBtn": "Contact Me",
+        "cvBtn": "Resume (CV)"
     },
     "hero": {
         "badge": "Enterprise Backend & SaaS Architect",
@@ -14,6 +15,7 @@
         "rolePrefix": "Specialized in:",
         "desc": "Enterprise Systems Engineer specializing in architecture, analysis, and backend development for complex platforms (HRMS, Payroll, Multi-Tenant SaaS, Workflows) using ASP.NET Core 8 & Microservices.",
         "btnExplore": "Explore Architecture",
+        "btnCV": "View Resume (CV)",
         "stat1": "Active Users in KSA",
         "stat2": "UTC Timezone Compliance",
         "stat3": "Hardcoded Workflow Routes",

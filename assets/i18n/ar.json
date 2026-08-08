@@ -5,7 +5,8 @@
         "architecture": "معمارية النظام",
         "skills": "المهارات",
         "experience": "الخبرات",
-        "contactBtn": "تواصل معي"
+        "contactBtn": "تواصل معي",
+        "cvBtn": "السيرة الذاتية (CV)"
     },
     "hero": {
         "badge": "Enterprise Backend & SaaS Architect",
@@ -14,6 +15,7 @@
         "rolePrefix": "متخصص في:",
         "desc": "مهندس أنظمة برمجية متخصص في تحليل ومعمارية وتطوير الأنظمة المؤسسية المعقدة (HRMS, Payroll, Multi-Tenant SaaS, Workflows) باستخدام ASP.NET Core 8 و Microservices مع خبرة في السوق السعودي والخليجي.",
         "btnExplore": "استكشف الإنجازات المعمارية",
+        "btnCV": "تحميل السيرة الذاتية (CV)",
         "stat1": "مستخدم في السوق السعودي",
         "stat2": "توافق زمن UTC العالمي",
         "stat3": "مسارات موافقات مبرمجة ثابته",
