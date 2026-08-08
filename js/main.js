@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tab2: "Workflow Rule Evaluator",
                 tab3: "Overnight Shift Mapper",
                 copyBtn: "نسخ الكود",
-                copied": "تم النسخ!"
+                copied: "تم النسخ!"
             },
             certifications: {
                 tag: "الاعتمادات الاحترافية",
