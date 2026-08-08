@@ -760,11 +760,10 @@ public class OvernightShiftMapper
         const message = msgInput.value.trim();
 
         if (!name || !email || !message) {
-            statusDiv.innerHTML = `<p style="color: #ef4444; font-weight: 500;">${currentLang === 'ar' ? '⚠️ يرجى ملء جميع الحقول المطلوبة' : '⚠️ Please fill all required fields'}</p>`;
+            statusDiv.innerHTML = `<p style="color: #ef4444; font-weight: 600;">${currentLang === 'ar' ? '⚠️ يرجى ملء جميع الحقول المطلوبة' : '⚠️ Please fill all required fields'}</p>`;
             return;
         }
 
-        // Open direct Gmail composer in new tab
         const subject = encodeURIComponent((currentLang === 'ar' ? 'فرصة عمل / تواصل من: ' : 'Portfolio Opportunity from: ') + name);
         const bodyContent = encodeURIComponent(
             (currentLang === 'ar' ? 'الاسم: ' : 'Name: ') + name + '\n' +
@@ -784,5 +783,42 @@ public class OvernightShiftMapper
         statusDiv.innerHTML = `<div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #10b981; padding: 12px 16px; border-radius: 8px; font-weight: 600;">
             ${currentLang === 'ar' ? '✅ تم فتح نافذة البريد لإرسال رسالتك مباشرة إلى المهندس عبدالرحمن!' : '✅ Email composer opened to send your message directly to Eng. Abdulrahman!'}
         </div>`;
+    };
+
+    // Direct WhatsApp with Prefilled Message from Form
+    window.sendViaWhatsAppDirect = function() {
+        const nameInput = document.getElementById('contactName');
+        const emailInput = document.getElementById('contactEmail');
+        const msgInput = document.getElementById('contactMessage');
+        const name = nameInput ? nameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const message = msgInput ? msgInput.value.trim() : '';
+
+        let text = currentLang === 'ar' 
+            ? `السلام عليكم ورحمة الله، أنا المهندس/الأستاذ: ${name || 'زائر للموقع'}`
+            : `Hello Eng. Abdulrahman, I am: ${name || 'Portfolio Visitor'}`;
+
+        if (email) {
+            text += currentLang === 'ar' ? `\nبريدي الإلكتروني: ${email}` : `\nMy Email: ${email}`;
+        }
+        if (message) {
+            text += currentLang === 'ar' ? `\nتفاصيل الرسالة: ${message}` : `\nMessage: ${message}`;
+        }
+
+        const waUrl = `https://api.whatsapp.com/send?phone=967775115810&text=${encodeURIComponent(text)}`;
+        window.open(waUrl, '_blank');
+    };
+
+    // Copy Email to Clipboard with UI feedback
+    window.copyEmailToClipboard = function() {
+        const email = "abdulrahmanaldoais@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+            const btnText = document.getElementById('copyEmailBtnText');
+            if (btnText) {
+                const orig = btnText.textContent;
+                btnText.textContent = currentLang === 'ar' ? "تم النسخ! ✅" : "Copied! ✅";
+                setTimeout(() => { btnText.textContent = orig; }, 2500);
+            }
+        });
     };
 });
