@@ -604,6 +604,126 @@ textarea.form-control { resize: vertical; min-height: 110px; }
 .modal-title { font-size: 1.5rem; font-weight: 800; color: var(--accent-blue); }
 .modal-body { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
 
+/* Direct Communication Action Hub */
+.contact-action-panel {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+[data-theme="light"] .contact-action-panel {
+    background: rgba(248, 250, 252, 0.8);
+}
+
+.direct-channels-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.direct-channel-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.direct-channel-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-glow);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-gmail:hover {
+    border-color: #ea4335;
+    background: rgba(234, 67, 53, 0.08);
+}
+
+.card-whatsapp:hover {
+    border-color: #25d366;
+    background: rgba(37, 211, 102, 0.08);
+}
+
+.card-linkedin:hover {
+    border-color: #0a66c2;
+    background: rgba(10, 102, 194, 0.08);
+}
+
+.card-copy:hover {
+    border-color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.channel-icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(234, 67, 53, 0.15);
+    color: #ea4335;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.channel-text {
+    flex: 1;
+}
+
+.channel-text h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+    color: var(--text-main);
+}
+
+.channel-text p {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.channel-arrow {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    transition: var(--transition);
+}
+
+[dir="rtl"] .channel-arrow {
+    transform: scaleX(-1);
+}
+
+.direct-channel-card:hover .channel-arrow {
+    color: var(--accent-blue);
+    transform: translateX(4px);
+}
+
+[dir="rtl"] .direct-channel-card:hover .channel-arrow {
+    transform: scaleX(-1) translateX(4px);
+}
+
+.channel-badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-blue);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border-glow);
+}
+
 @media (max-width: 992px) {
     .hero-grid, .arch-viewer-box, .contact-box { grid-template-columns: 1fr; }
     .hero-title { font-size: 2.4rem; }
