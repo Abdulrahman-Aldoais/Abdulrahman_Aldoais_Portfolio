@@ -67,12 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
             tabs: { all: "الكل", saas: "Multi-Tenant & UTC", workflow: "Workflow Engine", payroll: "Payroll & Finance", attendance: "Attendance & Shift" },
             cards: {
                 btnDetails: "معاينة الصور والتفاصيل المعمارية",
-                card1: { title: "Multi-Tenant SaaS & Decoupled Timezone Architecture", desc: "معمارية متكاملة تضمن الفصل التام لبيانات المستأجرين وحل مشاكل الفارق الزمني العالمي عبر معالجة UTC موحدة وتعيين توقيت المستأجر آلياً." },
-                card2: { title: "Dynamic Enterprise Workflow & Approval Engine", desc: "محرك موافقات ديناميكي يعالج الشروط المعقدة في الـ Runtime، مع دعم التفويض، السحب وإعادة الإرسال، الاعتماد الذاتي، الشات المباشر، والـ SLA Auto-Escalation." },
-                card3: { title: "Advanced Hybrid Penalty & Disciplinary Engine", desc: "نظام أتمتة التدرج التلقائي للمخالفات الإدارية والمالية وفق لائحة العمل المعتمدة، مع الربط المباشر بمحرك الحضور ومسار الاعتراضات." },
-                card4: { title: "Attendance Processing & Overnight Shift Engine", desc: "محرك معالجة حركات البصمة الحيوية والربط الديناميكي مع الورديات الليلية المتداخلة عبر منتصف الليل (Overnight Shifts) وتنقيتها من التكرار." },
-                card5: { title: "Contract Versioning & End of Service (EOSB) Engine", desc: "نظام تتبع إصدارات العقود غير القابلة للتعديل العكسي، مع الأتمتة الكاملة لحسابات مكافأة نهاية الخدمة والتسويات المالية." },
-                card6: { title: "Financial Payroll Engine & Bulk Processing Architecture", desc: "محرك الرواتب والعمليات المالية الجماعية، يتيح معالجة الأجور، البدلات، الاستقطاعات المباشرة، وتجميد المسيرات تاريخياً لآلاف الموظفين وتصدير ملفات البنوك." }
+                card1: { title: "معمارية السحابة وتعدد المستأجرين وحل الفارق الزمني <br><span class=\"card-subtitle-en\">Multi-Tenant SaaS & Decoupled Timezone</span>", desc: "معمارية متكاملة تضمن الفصل التام لبيانات المستأجرين وحل مشاكل الفارق الزمني العالمي عبر معالجة UTC موحدة وتعيين توقيت المستأجر آلياً." },
+                card2: { title: "محرك سير العمل والموافقات الديناميكي <br><span class=\"card-subtitle-en\">Dynamic Enterprise Workflow & Approval Engine</span>", desc: "محرك موافقات ديناميكي يعالج الشروط المعقدة في الـ Runtime، مع دعم التفويض، السحب وإعادة الإرسال، الاعتماد الذاتي، الشات المباشر، والـ SLA Auto-Escalation." },
+                card3: { title: "محرك الجزاءات واللائحة التأديبية الذكي <br><span class=\"card-subtitle-en\">Hybrid Penalty & Disciplinary Engine</span>", desc: "نظام أتمتة التدرج التلقائي للمخالفات الإدارية والمالية وفق لائحة العمل المعتمدة، مع الربط المباشر بمحرك الحضور ومسار الاعتراضات." },
+                card4: { title: "محرك معالجة الحضور والورديات الليلية المتداخلة <br><span class=\"card-subtitle-en\">Attendance Processing & Overnight Shift Engine</span>", desc: "محرك معالجة حركات البصمة الحيوية والربط الديناميكي مع الورديات الليلية المتداخلة عبر منتصف الليل (Overnight Shifts) وتنقيتها من التكرار." },
+                card5: { title: "إدارة إصدارات العقود ومكافأة نهاية الخدمة <br><span class=\"card-subtitle-en\">Contract Versioning & EOSB Engine</span>", desc: "نظام تتبع إصدارات العقود غير القابلة للتعديل العكسي، مع الأتمتة الكاملة لحسابات مكافأة نهاية الخدمة والتسويات المالية." },
+                card6: { title: "محرك الرواتب والمسيرات المالية الجماعية <br><span class=\"card-subtitle-en\">Financial Payroll Engine & Bulk Architecture</span>", desc: "محرك الرواتب والعمليات المالية الجماعية، يتيح معالجة الأجور، البدلات، الاستقطاعات المباشرة، وتجميد المسيرات تاريخياً لآلاف الموظفين وتصدير ملفات البنوك." }
             },
             modals: {
                 prevBtn: "◀ الصورة السابقة",
@@ -504,7 +504,7 @@ public class OvernightShiftMapper
             const cardDescEl = document.querySelector(`.achievement-card:nth-child(${i}) .card-desc`);
             const cardLinkEl = document.querySelector(`.achievement-card:nth-child(${i}) .card-link span`);
 
-            if (cardTitleEl && cardData) cardTitleEl.textContent = cardData.title;
+            if (cardTitleEl && cardData) cardTitleEl.innerHTML = cardData.title;
             if (cardDescEl && cardData) cardDescEl.textContent = cardData.desc;
             if (cardLinkEl) cardLinkEl.textContent = dict.cards.btnDetails;
         }
