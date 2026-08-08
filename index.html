@@ -682,7 +682,7 @@
         <div class="modal-container">
             <div class="modal-header-top">
                 <h3 class="modal-title" id="modalTitle">عنوان الإنجاز</h3>
-                <button class="modal-close-btn" onclick="closeModal()" data-i18n="modals.closeBtn">✕ إغلاق</button>
+                <button class="modal-close-icon" onclick="closeModal()" title="إغلاق">✕</button>
             </div>
             <div class="modal-body" id="modalBody"></div>
         </div>
@@ -690,25 +690,30 @@
 
     <!-- Interactive CV Viewer Modal -->
     <div class="modal-overlay" id="cvModalOverlay">
-        <div class="modal-container" style="max-width: 960px; height: 92vh;">
+        <div class="modal-container" style="max-width: 960px; height: 90vh;">
             <div class="modal-header-top">
-                <h3 class="modal-title" style="display: flex; align-items: center; gap: 10px;">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                    <span data-i18n="cvModal.title">السيرة الذاتية الرسمية — عبدالرحمن علي الدعيس</span>
-                </h3>
-                <div style="display: flex; gap: 10px; align-items: center;">
-                    <a href="assets/cv.pdf" target="_blank" class="gallery-btn" style="padding: 6px 14px; font-size: 0.85rem; text-decoration: none;">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 32px; height: 32px; border-radius: 6px; background: rgba(37, 99, 235, 0.15); color: var(--accent-blue); display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 0;" data-i18n="cvModal.title">السيرة الذاتية المهنية (Official CV)</h4>
+                        <span style="font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-code);">Abdulrahman_Aldoais_CV.pdf</span>
+                    </div>
+                </div>
+                <div class="modal-actions-toolbar">
+                    <a href="assets/cv.pdf" target="_blank" class="modal-btn modal-btn-secondary" title="فتح في نافذة مستقلة">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                         <span data-i18n="cvModal.openNew">نافذة مستقلة</span>
                     </a>
-                    <a href="assets/cv.pdf" download="Abdulrahman_Aldoais_CV.pdf" class="gallery-btn" style="padding: 6px 14px; font-size: 0.85rem; text-decoration: none;">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <a href="assets/cv.pdf" download="Abdulrahman_Aldoais_CV.pdf" class="modal-btn modal-btn-primary" title="تحميل ملف PDF">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                         <span data-i18n="cvModal.download">تحميل PDF</span>
                     </a>
-                    <button class="modal-close-btn" onclick="closeCvModal()" data-i18n="modals.closeBtn">✕ إغلاق</button>
+                    <button class="modal-close-icon" onclick="closeCvModal()" title="إغلاق">✕</button>
                 </div>
             </div>
-            <div class="modal-body" style="height: calc(100% - 70px); padding: 0;">
+            <div class="modal-body" style="height: calc(100% - 64px); padding: 0;">
                 <iframe id="cvFrame" src="assets/cv.pdf" style="width: 100%; height: 100%; border: none; border-radius: var(--radius-md);"></iframe>
             </div>
         </div>
