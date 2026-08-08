@@ -30,9 +30,11 @@
                 <li><a href="#achievements" data-i18n="nav.achievements">الإنجازات التقنية</a></li>
                 <li><a href="#architecture" data-i18n="nav.architecture">معمارية النظام</a></li>
                 <li><a href="#code" data-i18n="nav.code">الكود النظيف</a></li>
+                <li><a href="#stack" data-i18n="nav.stack">البيئة والتقنيات</a></li>
                 <li><a href="#skills" data-i18n="nav.skills">المهارات</a></li>
                 <li><a href="#experience" data-i18n="nav.experience">الخبرات</a></li>
                 <li><a href="#testimonials" data-i18n="nav.testimonials">التوصيات</a></li>
+                <li><a href="#faq" data-i18n="nav.faq">الأسئلة المعمارية</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="nav-cv-btn" onclick="openCvModal()" title="View & Download CV">
@@ -402,6 +404,63 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         </div>
     </section>
 
+    <!-- Approved Environment & Tech Stack -->
+    <section class="stack-section" id="stack">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="stack.tag">البيئة والتقنيات المعتمدة</span>
+                <h2 class="section-title" data-i18n="stack.title">أدوات المعمارية وتطوير الأنظمة</h2>
+                <p class="section-desc" data-i18n="stack.desc">مجموعة الأدوات والمكتبات المتقدمة المستخدمة لبناء واستقرار الأنظمة المؤسسية</p>
+            </div>
+
+            <div class="stack-grid">
+                <div class="stack-card">
+                    <h3 class="stack-card-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect></svg>
+                        <span data-i18n="stack.cat1">IDEs & Dev Tools</span>
+                    </h3>
+                    <div class="stack-tags-list">
+                        <span class="stack-pill">Visual Studio 2022</span>
+                        <span class="stack-pill">JetBrains Rider</span>
+                        <span class="stack-pill">Postman / Insomnia</span>
+                        <span class="stack-pill">Git / GitLab CI</span>
+                        <span class="stack-pill">Docker & K8s</span>
+                        <span class="stack-pill">SSMS & DBeaver</span>
+                    </div>
+                </div>
+
+                <div class="stack-card">
+                    <h3 class="stack-card-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <span data-i18n="stack.cat2">NuGet & Architecture Libraries</span>
+                    </h3>
+                    <div class="stack-tags-list">
+                        <span class="stack-pill">MediatR (CQRS)</span>
+                        <span class="stack-pill">FluentValidation</span>
+                        <span class="stack-pill">Serilog & Seq</span>
+                        <span class="stack-pill">AutoMapper</span>
+                        <span class="stack-pill">gRPC.AspNetCore</span>
+                        <span class="stack-pill">SignalR Core</span>
+                    </div>
+                </div>
+
+                <div class="stack-card">
+                    <h3 class="stack-card-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        <span data-i18n="stack.cat3">Security & SSO Protocols</span>
+                    </h3>
+                    <div class="stack-tags-list">
+                        <span class="stack-pill">Keycloak IAM</span>
+                        <span class="stack-pill">OAuth2 & OpenID Connect</span>
+                        <span class="stack-pill">JWT Token Auth</span>
+                        <span class="stack-pill">Fine-Grained RBAC</span>
+                        <span class="stack-pill">Data Encryption</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Certifications & Professional Badges -->
     <section class="certs-section" id="certifications">
         <div class="container">
@@ -466,7 +525,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <span class="testimonial-quote-icon">“</span>
-                    <p class="testimonial-text" data-i18n="testimonials.t1Text">عبدالرحمن مهندس متمكن للغاية من تحليل وتصميم المعماريات المعقدة، قاد مرحلة أتمتة محرك سير العمل والرواتب في منصة FALAK HR بدقة واحترافية عالية متخطياً كافة التحديات الزمانية والهيكلية.</p>
+                    <p class="testimonial-text" data-i18n="testimonials.t1Text">عبدالرحمن مهندس متمكن للغاية من تحليل وتصميم المعماريات المعقدة، قاد مرحلة أتمتة محرك سير العمل والرواتب في منصة FALAK HR بدقة وااحترافية عالية متخطياً كافة التحديات الزمانية والهيكلية.</p>
                     <div class="testimonial-author-box">
                         <div class="author-avatar">FS</div>
                         <div class="author-info">
@@ -486,6 +545,51 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
                             <p data-i18n="testimonials.t2Company">شركة داتا ترانس (لصالح العبيكان للحلول الرقمية - KSA)</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architectural FAQ for CTOs & Recruiters -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="faq.tag">الاستفسارات المعمارية لمدراء التقنية</span>
+                <h2 class="section-title" data-i18n="faq.title">الأسئلة الأكثر شيوعاً في معمارية الأنظمة (FAQ)</h2>
+                <p class="section-desc" data-i18n="faq.desc">إجابات تقنية مباشرة توضح النهج الهندسي المتبع في حل التحديات المعقدة</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3 class="faq-question">
+                        <span class="faq-question-icon">Q1.</span>
+                        <span data-i18n="faq.q1">كيف تضمن الفصل التام لبيانات العملاء في نظام Multi-Tenant SaaS؟</span>
+                    </h3>
+                    <p class="faq-answer" data-i18n="faq.a1">أطبق استراتيجية عزل البيانات المباشرة على مستوى قاعدة البيانات باستخدام Tenant ID Middleware متبوعاً بقواعد تصفية تلقائية في EF Core Global Query Filters لضمان عدم تسرب أو تداخل أي بيانات بين الشركات.</p>
+                </div>
+
+                <div class="faq-card">
+                    <h3 class="faq-question">
+                        <span class="faq-question-icon">Q2.</span>
+                        <span data-i18n="faq.q2">كيف تعالج مشكلة الفارق الزمني بين سيرفر الاستضافة والمستخدمين في دول مختلفة؟</span>
+                    </h3>
+                    <p class="faq-answer" data-i18n="faq.a2">نظام موحد يعتمد على تخزين جميع البيانات في قاعدة البيانات بـ UTC بشكل دائم، مع استخدام محولات قيم ValueConverters في EF Core، وتطبيق توقيت المستأجر آلياً قبل إجراء أي حسابات لورديات العمل أو البصمة.</p>
+                </div>
+
+                <div class="faq-card">
+                    <h3 class="faq-question">
+                        <span class="faq-question-icon">Q3.</span>
+                        <span data-i18n="faq.q3">كيف يقضي محرك سير العمل الديناميكي على المسارات المبرمجة ثابتاً (Hardcoded)؟</span>
+                    </h3>
+                    <p class="faq-answer" data-i18n="faq.a3">عبر تقييم الشروط (القيم المالية، الأيام، المودويل) في الـ Runtime باستخدام Runtime Rules Evaluator، مما يتيح للمشرفين تعديل أو إضافة مسارات موافقات معقدة من لوحة التحكم دون الحاجة لكتابة كود جديد.</p>
+                </div>
+
+                <div class="faq-card">
+                    <h3 class="faq-question">
+                        <span class="faq-question-icon">Q4.</span>
+                        <span data-i18n="faq.q4">ما هي مدى جاهزية محرك الرواتب ومكافأة نهاية الخدمة لنظام العمل السعودي؟</span>
+                    </h3>
+                    <p class="faq-answer" data-i18n="faq.a4">المحرك مصمم ومطور بمرونة تامة للالتزام ببنود لائحة العمل السعودية، بما يشمل حسابات نهاية الخدمة (EOSB) حسب سنوات الخدمة وسبب الانتهاء، وتوليد ملفات البنوك بنظام SIF وتجميد المسيرات تاريخياً.</p>
                 </div>
             </div>
         </div>

@@ -104,8 +104,8 @@ body {
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); font-weight: 800; font-size: 1.2rem; }
 .logo-icon { width: 38px; height: 38px; background: linear-gradient(135deg, #1e40af, #2563eb); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
 
-.nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
-.nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: var(--transition); position: relative; }
+.nav-links { display: flex; align-items: center; gap: 16px; list-style: none; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: var(--transition); position: relative; }
 .nav-links a:hover, .nav-links a.active { color: var(--accent-blue); }
 
 .nav-actions { display: flex; align-items: center; gap: 10px; }
@@ -326,6 +326,27 @@ body {
 .code-snippet-box { padding: 24px; overflow-x: auto; background: #0d1117; color: #c9d1d9; font-family: var(--font-code); font-size: 0.9rem; line-height: 1.6; }
 .code-snippet-box pre { margin: 0; }
 
+/* Tech Stack Grid Section */
+.stack-section { padding: 100px 0; }
+.stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+.stack-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px; transition: var(--transition); }
+.stack-card:hover { border-color: var(--border-glow); transform: translateY(-4px); }
+.stack-card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 20px; color: var(--accent-blue); display: flex; align-items: center; gap: 10px; }
+.stack-tags-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.stack-pill { background: rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.2); color: var(--text-main); font-size: 0.85rem; font-weight: 600; padding: 6px 14px; border-radius: 18px; font-family: var(--font-code); transition: var(--transition); }
+.stack-pill:hover { background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue); }
+
+/* Architectural FAQ Section */
+.faq-section { padding: 100px 0; background: rgba(17, 24, 39, 0.4); border-top: 1px solid var(--border-color); }
+[data-theme="light"] .faq-section { background: rgba(241, 245, 249, 0.6); }
+.faq-grid { display: flex; flex-direction: column; gap: 20px; max-width: 880px; margin: 0 auto; }
+.faq-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; transition: var(--transition); }
+.faq-card:hover { border-color: var(--border-glow); }
+.faq-question { font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; }
+.faq-question-icon { color: var(--accent-blue); flex-shrink: 0; font-weight: 800; font-family: var(--font-code); }
+.faq-answer { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; padding-left: 28px; }
+[dir="rtl"] .faq-answer { padding-left: 0; padding-right: 28px; }
+
 /* Certifications Grid */
 .certs-section { padding: 100px 0; }
 .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
@@ -382,7 +403,7 @@ body {
 .timeline-bullets { list-style: none; margin-top: 16px; }
 .timeline-bullets li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 0.92rem; color: var(--text-muted); }
 [dir="rtl"] .timeline-bullets li { padding-left: 0; padding-right: 20px; }
-.timeline-bullets li::before { content: '▹'; position: absolute; left: 0; color: var(--accent-blue); }
+.timeline-bullets li::before { content: '<ctrl42>'; position: absolute; left: 0; color: var(--accent-blue); }
 [dir="rtl"] .timeline-bullets li::before { left: auto; right: 0; }
 
 /* Contact */

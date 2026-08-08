@@ -4,9 +4,11 @@
         "achievements": "Achievements",
         "architecture": "Architecture",
         "code": "Clean Code",
+        "stack": "Tech Stack",
         "skills": "Skills",
         "experience": "Experience",
         "testimonials": "Testimonials",
+        "faq": "Architecture FAQ",
         "contactBtn": "Contact Me",
         "cvBtn": "Resume"
     },
@@ -41,6 +43,27 @@
         "tab3": "Overnight Shift Mapper",
         "copyBtn": "Copy Snippet",
         "copied": "Copied!"
+    },
+    "stack": {
+        "tag": "APPROVED ENVIRONMENT & STACK",
+        "title": "Architecture Tools & Development Stack",
+        "desc": "Advanced tools, frameworks, and libraries utilized to build resilient enterprise solutions",
+        "cat1": "IDEs & Dev Tools",
+        "cat2": "NuGet & Architecture Libraries",
+        "cat3": "Security & SSO Protocols"
+    },
+    "faq": {
+        "tag": "ARCHITECTURAL QA FOR CTOS",
+        "title": "Frequently Asked Architectural Questions (FAQ)",
+        "desc": "Direct technical answers outlining the engineering approach used to solve complex backend challenges",
+        "q1": "How do you enforce tenant data isolation in Multi-Tenant SaaS?",
+        "a1": "I enforce database query isolation using a Tenant ID Middleware combined with EF Core Global Query Filters to automatically scope all data reads/writes and prevent cross-tenant leaks.",
+        "q2": "How do you solve server vs. client timezone mismatches across countries?",
+        "a2": "By standardizing all database timestamps in UTC, leveraging EF Core ValueConverters on read/write, and applying the tenant's custom local timezone before evaluating shift schedules or biometric punches.",
+        "q3": "How does the Dynamic Workflow Engine eliminate hardcoded approval paths?",
+        "a3": "By processing business conditions (amounts, days, department) at runtime using a Runtime Rules Evaluator, allowing administrators to modify complex approval routes directly from UI without code deployment.",
+        "q4": "How compliant is the Payroll & EOSB engine with Saudi Labor Law?",
+        "a4": "The engine is fully compliant with Saudi Labor regulations, supporting End of Service (EOSB) calculations based on tenure and contract termination reasons, SIF bank file exports, and historical payroll locks."
     },
     "certifications": {
         "tag": "PROFESSIONAL CREDENTIALS",
